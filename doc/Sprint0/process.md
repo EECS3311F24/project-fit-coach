@@ -1,1 +1,20 @@
-yo
+**How did you organize the team? Which tools did you use, if any?**
+
+The way we organized the team was first by identifying the goal of the project and what major idea we would together. Once everyone agreed, we have then clear idea as a team what we are trying to achieve. We then collaborated together in team meetings on what features of the project we would add and who we were targeting. We then organized the team based on each other's strengths so we could have a diverse group of people with different skill sets to be able to create a well-designed project. We would divide the work based on these strengths so everyone is comfortable with what they are doing. We used WhatsApp to create the team and to have thorough communication with each other. We also use the discord server to communicate and host team meetings to work on the project. 
+
+**How did you make decisions?**
+
+The way we made decisions was through an approval system. If someone brings up a decision of trying something, we ask each team member what their thoughts and opinions are on the decision. If the decision was approved by everyone then we would proceed with the decision. If the decision was not approved by everyone then instead of discrediting the decision, we would discuss what we can add or make a tweak to the decision to make the decision a good one with everyone. A decision request would be made during a team meetings or in our messaging group.
+
+**How did you define priority and/or points of user stories? How many rounds of voting (on average) did you need to come to a consensus for the point estimate?**
+
+????????
+
+**How frequently did you meet?**
+
+We would host a team meeting on Discord once a week on the weekends. This is where the majority of the work would be done. We would do it together as a team to get everyone's input. 
+
+**What lessons should you take forward to the next phase?**
+
+Some lessons we can take forward is discussion over a decision is very important as that is where you can get everyone's input and get everyone involved. You want to hear everyone's thoughts and not discredit any thoughts without any consideration of what the person is saying. It’s very important to be open-minded and hear others' opinions as that's the best way to learn. Another lesson is to host a meeting when everyone is available as sometimes one or two people are not able to attend. So to be able to have everyone attend, we would create polls in our Whatsapp group of all the times possible on the weekends. Whatever time gets 5 selections, meaning everyone is available at that time, then we would host the team meeting at that time. This is to ensure no one gets left behind and we get everyone's input on an idea or decision we would like to make. Finally, another lesson we learned is sometimes it’s difficult to do the work together as a team because of the time constraint. So the idea we came up with is any work that is extremely difficult, we would do it together as a team, and anything that is simple or not too difficult to do would be done individually by one team member. So if there are five parts and there all simple or not too difficult to do then we would split them up evenly and finish the part you were assigned. This way we can get way more work done faster and finish before the deadline. To ensure the teammate's work was done correctly, another team member would review the work and make any necessary changes to the work. 
+	
