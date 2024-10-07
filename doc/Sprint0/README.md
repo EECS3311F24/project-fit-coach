@@ -1,7 +1,7 @@
 # Fitness Coach App
 
 ## Motivation
-In today's fitness-driven world, the need for a platform that tracks both nutrition and workout progress is critical for fitness enthusiasts. Many existing solutions lack either advanced workout tracking or comprehensive nutrition logging, limiting their usefulness for serious athletes and fitness coaches. Our app is designed to fill this gap, providing bodybuilders, powerlifters, CrossFitters, beginners, and fitness coaches with a versatile tool that integrates detailed nutrition tracking, progressive overload systems, customizable workout plans, and client management features. 
+In today's fitness-driven world, the need for a platform that tracks both nutrition and workout progress is critical for fitness enthusiasts. Many existing solutions lack either advanced workout tracking or comprehensive nutrition logging, limiting their usefulness for serious athletes and fitness coaches. Our app is designed to fill this gap, providing bodybuilders, powerlifters, CrossFitters, beginners, and fitness coaches with a versatile tool that integrates detailed nutrition tracking, progressive overload systems, and customizable workout plans.
 
 This app aims to help users achieve their fitness goals more efficiently by offering precise tracking, personalized workout routines, and nutrition suggestions. It's a one-stop solution for anyone looking to improve health, fitness, and overall performance.
 
@@ -9,9 +9,7 @@ This app aims to help users achieve their fitness goals more efficiently by offe
 - **Detailed Nutrition Tracking:** Track food intake, macronutrients, and calories consumed.
 - **Progressive Overload System:** Automatically suggest weight and rep adjustments for optimal strength gains.
 - **Customizable Workouts:** Create and log custom exercises and routines.
-- **Pre-Made Workout Plans:** Provide beginners with easy-to-follow plans tailored to their fitness goals.
-- **Coach Mode:** Allow fitness coaches to monitor and customize their clients' workouts and meal plans.
-- **Streak and Tier System:** Motivate users to stay consistent with streak tracking and performance-based ranking.
+- **Comprehensize Features:** Provide beginners with easy-to-follow plans tailored to their fitness goals.
 
 ## Installation
 To run the project locally, follow these steps:
@@ -74,15 +72,5 @@ We welcome contributions from the community! Follow these guidelines to get invo
 - **feature/branch-name**: New features and enhancements.
 - **bugfix/branch-name**: Bug fixes and minor improvements.
 - **hotfix/branch-name**: Urgent fixes for issues in production.
-- **develop**: The main development branch. All new features are merged here before being released to `main`.
+- **development**: The main development branch. All new features are merged here before being released to `main`.
 - **main**: Production-ready code only. Releases are tagged here.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-- [Node.js](https://nodejs.org/)
-- [Flutter](https://flutter.dev/)
-- [Firebase](https://firebase.google.com/)
-- [Git Flow](https://nvie.com/posts/a-successful-git-branching-model/)
-
