@@ -1,15 +1,16 @@
 # Fitness Coach App
 
 ## Motivation
-In today's fitness-driven world, the need for a platform that tracks both nutrition and workout progress is critical for fitness enthusiasts. Many existing solutions lack either advanced workout tracking or comprehensive nutrition logging, limiting their usefulness for serious athletes and fitness coaches. Our app is designed to fill this gap, providing bodybuilders, powerlifters, CrossFitters, beginners, and fitness coaches with a versatile tool that integrates detailed nutrition tracking, progressive overload systems, and customizable workout plans.
+In today's fitness-driven world, the need for a platform that tracks both nutrition and workout progress is critical for fitness enthusiasts. Many existing solutions lack either advanced workout tracking or comprehensive nutrition logging, limiting their usefulness for serious athletes and fitness coaches. Our app is designed to fill this gap, providing bodybuilders, powerlifters, CrossFitters, beginners, and fitness coaches with a versatile tool that integrates detailed nutrition tracking, progressive overload systems, and customizable workout plans. This website aims to help users achieve their fitness goals more efficiently by offering precise tracking, personalized workout routines, and nutrition suggestions. 
 
-This app aims to help users achieve their fitness goals more efficiently by offering precise tracking, personalized workout routines, and nutrition suggestions. It's a one-stop solution for anyone looking to improve health, fitness, and overall performance.
+It's a one-stop solution for anyone looking to improve health, fitness, and overall performance.
 
 ## Features
 - **Detailed Nutrition Tracking:** Track food intake, macronutrients, and calories consumed.
 - **Progressive Overload System:** Automatically suggest weight and rep adjustments for optimal strength gains.
 - **Customizable Workouts:** Create and log custom exercises and routines.
 - **Comprehensize Features:** Provide beginners with easy-to-follow plans tailored to their fitness goals.
+- **Displayable Profiles:** Provide the ability for your profile to be displayed to the other people following you.
 
 ## Installation
 To run the project locally, follow these steps:
@@ -38,12 +39,8 @@ To run the project locally, follow these steps:
 3. **Set up Firebase:**
     Follow [Firebase setup instructions](https://firebase.google.com/docs/flutter/setup) for Flutter, and ensure you add your Firebase project configuration files (`google-services.json` for Android and `GoogleService-Info.plist` for iOS).
 
-4. **Run the app:**
-    ```bash
-    flutter run
-    ```
+4. The project could be viewed using the website's link
 
-Your app should now be running locally on your device or emulator.
 
 ## Contribution
 
