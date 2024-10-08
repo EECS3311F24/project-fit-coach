@@ -38,9 +38,6 @@ Customization & Flexibility
 - Provide different themes and color schemes for users to customize their experience.
 - Allow users to define and log their unique exercises.
 
-### Coach’s View:
-- Coaches can access a consolidated view of client workouts and meal plans.
-
 ### Exercise Logging:
 - Users can log exercises on specific days, creating a comprehensive workout plan.
 
