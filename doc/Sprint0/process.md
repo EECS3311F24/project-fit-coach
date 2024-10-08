@@ -8,7 +8,7 @@ The way we made decisions was through an approval system. If someone brings up a
 
 **How did you define priority and/or points of user stories? How many rounds of voting (on average) did you need to come to a consensus for the point estimate?**
 
-????????
+The way we defined priority of user stories was analysing how the user would interact with our project and how the project would function. We identified all the key features, and ordered from least to greatest the most valuable feature for the user. When it came to estimating points of the user story, we judged it by how difficult and how much effort it would require from us to implement the user story into our project. We would discuss together how much user points we would give to per user story. This way we get everyone's input and be able to see the different opinions each team member had on each user story. On average, it would take about 2-3 rounds to come up with a consensus together as a team. Our first round would lead to lots of discussion, addressing each of our viewpoints. This then helped us come up with the point estimation and come up with a final consensus.
 
 **How frequently did you meet?**
 
