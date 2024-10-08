@@ -1,4 +1,5 @@
 As a user, I want to be able to reset my password if I forget which one I used.
+
 As a user, I want to be able to easily create an account to have access to other features.
 As a user, I want to be able to use my personal email address along a password during registration.
 As an user, I want to the application I am using to remember my email so I won’t have to sign in everytime.
