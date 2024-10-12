@@ -15,6 +15,7 @@ public class Backend {
 			outputResponse.println("Welcome to our server");
 			userSocket.close();
 		}
+		mySocket.close();
 		
 		} catch(Exception e) {
 			// used mainly for debugging any errors
