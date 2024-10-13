@@ -12,6 +12,9 @@ It's a one-stop solution for anyone looking to improve health, fitness, and over
 - **Comprehensize Features:** Provide beginners with easy-to-follow plans tailored to their fitness goals.
 - **Displayable Profiles:** Provide the ability for your profile to be displayed to the other people following you.
 
+## Template of our website
+[Our Figma Template](https://www.figma.com/design/m2cy0zGktx6M9CJewYXLsl/Website-template?node-id=0-1&t=hODHD6M4fiGcZofg-1)
+
 ## Installation
 To run the project locally, follow these steps:
 
