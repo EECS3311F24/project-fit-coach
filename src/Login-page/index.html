@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login And Registration Form</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="hero">
-        <div class="form-box">
-            
-            <div class="button-box">
-                <div id="btn"></div>
-                <button type="button" class="toggle-btn">Log In</button>
-                <button type="button" class="toggle-btn">Register</button>
-            </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login And Registration Form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="hero">
+            <div class="form-box">
 
-            <form class="input-group">
-                <input type="text" class="input-field" placeholder=" User Id" required>
-                <input type="text" class="input-field" placeholder=" Enter Password" required>
-                <input type="checkbox" class="chech-box"><span>Remember Password</span>
-                <button type="submit" class="submit-btn">Log in</button>
-            </form>
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn">Log In</button>
+                    <button type="button" class="toggle-btn">Register</button>
+                </div>
+
+                <form class="input-group" action="http://127.0.0.1:5000/login" method="POST">
+                    <input type="text" name="username" class="input-field" placeholder=" User Id" required>
+                    <input type="text" name="password" class="input-field" placeholder=" Enter Password" required>
+                    <input type="checkbox" class="check-box"><span>Remember Password</span>
+                    <button type="submit" class="submit-btn">Log in</button>
+                </form>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>

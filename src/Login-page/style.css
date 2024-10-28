@@ -96,7 +96,7 @@
     opacity: 1; /* Ensures full opacity */
 }
 
-.chech-box {
+.check-box {
     background: transparent; /* Make the checkbox background transparent */
     border: none; /* Remove the border */
     outline: none; /* Remove outline if present */
