@@ -15,7 +15,7 @@ The primary objectives of Sprint 1 are:
 --- 
 
 ### Sprint Scope
-Epic 1: User Login & Account Creation
+**Epic 1: User Login & Account Creation**
 - User Stories:
   - US1: "As a user, I want to be able to reset my password if I forget which one I used."
   - US2: "As a user, I want to be able to easily create an account to have access to other features."
@@ -25,21 +25,27 @@ Epic 1: User Login & Account Creation
   - US7: "As a user, I want to be able to use the appropriate system to record weight, whether in pounds, kilograms, or stones."
 
 Tasks:
-- Develop and implement a user registration and login interface.
-- Create password reset functionality.
-- Add validation and error messages for incorrect login attempts.
-- Enable a “Remember Me” feature for user login.
-- Allow users to enter and view their current weight in different measurement units (pounds, kilograms, stones).
+- Develop and implement a user registration and login interface. (Omer & Haisam)
+- Create password reset functionality. (Omer & Haisam)
+- Add validation and error messages for incorrect login attempts. (Daniel & Stefewn)
+- Enable a “Remember Me” feature for user login. (Omer & Haisam & Yuriy)
+- Allow users to enter and view their current weight in different measurement units (pounds, kilograms, stones). (Yuriy)
+
+Spikes Identified:
+- Secure Login Implementation: Research and implement best practices for securely handling user passwords and session data.
+- “Remember Me” Feature: Explore options for implementing a secure “Remember Me” feature that minimizes security risks.
 
 ---
 
-Epic 2: Customization
-
+**Epic 2: Customization**
 - User Stories:
   - US6: "As a user, I want to be able to customize my page with different colors so I enjoy the look of the application."
 
 Tasks:
-- Build a basic theme selector allowing users to choose from multiple color schemes.
+- Build a basic theme selector allowing users to choose from multiple color schemes. (Yuiry & Haisam)
+
+Spikes Identified:
+- Theme Customization Options: Research various methods for implementing customizable themes in a way that’s flexible and compatible across devices.
 
 ---
 
