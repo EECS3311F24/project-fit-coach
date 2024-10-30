@@ -5,8 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login And Registration Form</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     </head>
     <body>
+
         <div class="hero">
             <div class="form-box">
 
@@ -18,20 +20,50 @@
                 <div class="button-box">
                     <input type="radio" id="login" name="toggle" class="toggle-input" checked>
                     <label for="login" class="toggle-btn">Log In</label>
-                
+
                     <input type="radio" id="register" name="toggle" class="toggle-input">
                     <label for="register" class="toggle-btn">Register</label>
-                
+
                     <div id="btn"></div>
                 </div>
+                <!-- Register division -->
+                <div class="container" id="signup">
+                    <form method="post" action="">
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" name="fName" id="fName" placeholder="First Name" required>
+                            <label for="fName">First Name</label>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" name="lName" id="lName" placeholder="Last Name" required>
+                            <label for="lName">Last Name</label>
+                        </div>
+                    </form>
 
-                 <!-- Login Form -->
-                <form class="input-group" action="http://127.0.0.1:5000/login" method="POST">
-                    <input type="text" name="username" class="input-field" placeholder=" User Id" required>
-                    <input type="text" name="password" class="input-field" placeholder=" Enter Password" required>
-                    <input type="checkbox" class="check-box"><span>Remember me</span>
-                    <button type="submit" class="submit-btn">Log in</button>
-                </form>
+                </div>
+
+                <!-- Login division -->
+                <!-- add a id to container-->
+                <div class="container" >
+                    <!-- Login Form -->
+                    <form class="input-group" method="post" action="">
+                        <input type="text" name="username" class="input-field" placeholder=" User Id" required>
+                        <input type="text" name="password" class="input-field" placeholder=" Enter Password" required>
+                        <input type="checkbox" class="check-box"><span>Remember me</span>
+                        <button type="submit" class="submit-btn">Log in</button>
+                        <input type="submit" class="btn" value="Sign up" name="singUp">
+                    </form>
+                </div>
+
+
+
+
+
+                <div class="icons">
+                    <i class="fab fa-google"></i>
+                    <i class="fab fa-facebook"></i>
+                </div>
             </div>
         </div>
     </body>
