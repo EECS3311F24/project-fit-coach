@@ -9,17 +9,21 @@
     <body>
         <div class="hero">
             <div class="form-box">
-
+                <h1 id="hero_header" style="color: white;">Fit Coach</h1>
                 <div class="button-box">
+                    <input type="radio" id="login" name="toggle" class="toggle-input" checked>
+                    <label for="login" class="toggle-btn">Log In</label>
+                
+                    <input type="radio" id="register" name="toggle" class="toggle-input">
+                    <label for="register" class="toggle-btn">Register</label>
+                
                     <div id="btn"></div>
-                    <button type="button" class="toggle-btn">Log In</button>
-                    <button type="button" class="toggle-btn">Register</button>
                 </div>
 
                 <form class="input-group" action="http://127.0.0.1:5000/login" method="POST">
                     <input type="text" name="username" class="input-field" placeholder=" User Id" required>
                     <input type="text" name="password" class="input-field" placeholder=" Enter Password" required>
-                    <input type="checkbox" class="check-box"><span>Remember Password</span>
+                    <input type="checkbox" class="check-box"><span>Remember me</span>
                     <button type="submit" class="submit-btn">Log in</button>
                 </form>
             </div>

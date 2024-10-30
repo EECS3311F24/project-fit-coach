@@ -40,19 +40,63 @@
     align-items: center;
 }
 
-/* Ensure the toggle button text is visible */
+/* Hide the radio inputs */
+.toggle-input {
+    display: none;
+}
+
+/* Toggle Button Base Styles */
 .toggle-btn {
     padding: 10px 30px;
     cursor: pointer;
     background: transparent;
     border: 0;
     outline: none;
-    position: relative;
-    z-index: 1;  /* Make sure the text stays above the sliding button */
-    color: lightgrey;  /* Set toggle button text color to light grey */
+    color: lightgrey;
     font-weight: bold;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
+
+/* Active State for Log In Button */
+#login:checked + label[for="login"] {
+    color: white;
+}
+
+/* Inactive State for Register Button */
+#login:checked ~ label[for="register"] {
+    background-color: transparent;
+    color: lightgrey;
+}
+
+/* Active State for Register Button */
+#register:checked + label[for="register"] {
+    color: white;
+}
+
+/* Inactive State for Log In Button */
+#register:checked ~ label[for="login"] {
+    background-color: transparent;
+    color: lightgrey;
+}
+
+/* The moving #btn indicator */
+#btn {
+    position: absolute;
+    width: 100px;
+    height: 5px;
+    top: 50px;
+    left: 5px;
+    border-radius: 5px;
+    background-color: blue;
+    transition: 0.3s;
+}
+
+/* Position #btn based on selected radio button */
+#register:checked ~ #btn {
+    left: 135px;
+}
+
 
 /* Pressing Animation for Toggle Button */
 .toggle-btn:active {
