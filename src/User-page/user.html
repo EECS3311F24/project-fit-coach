@@ -2,22 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title>User</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="user.style.css">
 
 
-    <div class="navbar">
-        <a href="#" >Profile</a>
-    </div>
-    <div class="sidebar">
-        <h2>Sidebar</h2>
-        <div class="nav-links">
-            <a href="#">WORKOUTS</a>
-            <a href="#">NUTRITION</a>
-        </div>
-    </div>
 </head>
 <body>
     
+    <div class="sidebar">
+        <div class="top">
+                <div class="logo">
+                    <span>Fit Coach</span>
+                </div>
+                <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <div class="user">
+            <img src="images/fitcoach.webp" alt="fitcoach" class="user-img">
+            <div>
+                <p class="bold">Fit Coach</p>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="nav-item">Workouts</span>
+                </a>
+                <span class="tooltip">Workouts</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="nav-item">Nutrition</span>
+                </a>
+                <span class="tooltip">Nutrition</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="nav-item">About us</span>
+                </a>
+                <span class="tooltip">About us</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="nav-item">TOS</span>
+                </a>
+                <span class="tooltip">TOS</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="nav-item">Workouts</span>
+                </a>
+                <span class="tooltip">Workouts</span>
+            </li>
+        </ul>
+    </div>
+
+
+<div class="main-content">
+    <div class="container">
+        <h1>Fit Coach</h1>
+    </div>
+</div>
 </body>
+
+
+<script>
+    let btn = document.querySelector('#btn');
+    let sidebar = document.querySelector('.sidebar')
+
+    btn.onclick = function(){
+        sidebar.classList.toggle('active');
+    };
+</script>
 </html>
