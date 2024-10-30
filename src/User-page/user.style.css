@@ -1,0 +1,12 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items on the same line */
+    background-color: #fff;
+    padding: 15px 100px;
+    box-shadow: 0 4px 2px -2px gray;
+    position: sticky;
+    top: 0;
+    gap: 15px; /* Adjusts spacing between navbar items */
+}
