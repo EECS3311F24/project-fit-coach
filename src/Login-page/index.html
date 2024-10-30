@@ -9,7 +9,12 @@
     <body>
         <div class="hero">
             <div class="form-box">
+
+                <!-- Logo Image -->
+                <img src="images/Fit Coach Logo.jpeg" alt="Fit Coach Logo" class="logo">
+                <!-- Header -->
                 <h1 id="hero_header" style="color: white;">Fit Coach</h1>
+                <!-- Toggle Buttons -->
                 <div class="button-box">
                     <input type="radio" id="login" name="toggle" class="toggle-input" checked>
                     <label for="login" class="toggle-btn">Log In</label>
@@ -20,6 +25,7 @@
                     <div id="btn"></div>
                 </div>
 
+                 <!-- Login Form -->
                 <form class="input-group" action="http://127.0.0.1:5000/login" method="POST">
                     <input type="text" name="username" class="input-field" placeholder=" User Id" required>
                     <input type="text" name="password" class="input-field" placeholder=" Enter Password" required>
