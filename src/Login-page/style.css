@@ -16,17 +16,24 @@
 
 .form-box {
     width: 325px;
-    height: 480px;
+    height: 500px;
     margin: 6% auto;
-    background: #f9f8f528;
-    padding: 20px;
-    box-shadow: 0 0 20px 9px #393a39;
+    background: rgba(60, 60, 60, 0.85); /* Darker gray with slight transparency */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     border-radius: 30px;
+    padding: 20px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+    width: 80px; /* Adjust to preferred size */
+    height: auto;
+    margin-bottom: 15px; /* Space between logo and header */
 }
 
 .button-box {
@@ -172,4 +179,20 @@ span {
 .submit-btn:active {
     transform: scale(0.95);
     box-shadow: 0 0 10px 5px #4e4e4e44;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .form-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .button-box {
+        width: 90%;
+    }
+
+    .input-field {
+        font-size: 14px;
+    }
 }
