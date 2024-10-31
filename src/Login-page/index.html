@@ -14,8 +14,10 @@
 
                 <!-- Logo Image -->
                 <img src="images/Fit Coach Logo.jpeg" alt="Fit Coach Logo" class="logo">
+                
                 <!-- Header -->
                 <h1 id="hero_header" style="color: white;">Fit Coach</h1>
+                
                 <!-- Toggle Buttons -->
                 <div class="button-box">
                     <input type="radio" id="login" name="toggle" class="toggle-input" checked>
@@ -26,6 +28,7 @@
 
                     <div id="btn"></div>
                 </div>
+
                 <!-- Register division -->
                 <div class="container" id="signup">
                     <form method="post" action="">
@@ -42,32 +45,55 @@
                         <div class="input-group">
                             <i class="fas fa-envelope"></i>
                             <input type="text" name="email" id="email" placeholder="Email" required>
+                            <label for="email">Email</label>
                         </div>
-                    </form>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="password" id="password" placeholder="Password" required>
+                            <label for="password">Password</label>
+                        </div>
 
+                        <input type="submit" class="btn" value="Sign Up" name="singUp">
+                    </form>
+                    <div class="icons">
+                        <i class="fab fa-google"></i>
+                    </div>
+
+                    <div class="links">
+                        <p>Already Have an Account?</p>
+                        <button id="signInButton">Sign In</button>
+                    </div>
                 </div>
 
                 <!-- Login division -->
-                <!-- add a id to container-->
-                <div class="container" >
-                    <!-- Login Form -->
-                    <form class="input-group" method="post" action="">
-                        <input type="text" name="username" class="input-field" placeholder=" User Id" required>
-                        <input type="text" name="password" class="input-field" placeholder=" Enter Password" required>
-                        <input type="checkbox" class="check-box"><span>Remember me</span>
-                        <button type="submit" class="submit-btn">Log in</button>
-                        <input type="submit" class="btn" value="Sign up" name="singUp">
+                <div class="container" id="signIn">
+                    <form method="post" action="">
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" name="email" id="email" placeholder="Email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="password" id="password" placeholder="Password" required>
+                            <label for="password">Password</label>
+                        </div>
+                        <p class="recover">
+                            <a href="#">Recover Password</a>
+                        </p>
+
+                        <input type="submit" class="btn" value="Sign In" name="singIn">
                     </form>
+                    <div class="icons">
+                        <i class="fab fa-google"></i>
+                    </div>
+
+                    <div class="links">
+                        <p>Don't have an account yet?</p>
+                        <button id="signUpButton">Sign Up</button>
+                    </div>
                 </div>
 
-
-
-
-
-                <div class="icons">
-                    <i class="fab fa-google"></i>
-                    <i class="fab fa-facebook"></i>
-                </div>
             </div>
         </div>
         <script src="script.js"></script>
