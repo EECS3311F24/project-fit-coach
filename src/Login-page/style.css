@@ -9,7 +9,8 @@ form{
     margin:0 2rem;
 }
 .form-title{
-    font-size:1.5rem;
+    color: rgb(217, 217, 217);
+    font-size:2rem;
     font-weight:bold;
     text-align:center;
     padding:1.3rem;
@@ -62,10 +63,13 @@ input:focus~label,input:not(:placeholder-shown)~label{
 }
 .recover a{
     text-decoration:none;
-    color:rgb(125,125,235);
+    color:rgb(147, 97, 37);
+    transition: 0.5s;
 }
 .recover a:hover{
-    color:blue;
+    color:rgb(217, 130, 23);
+    font-size: 1.05rem;
+    transition: 1s;
     text-decoration:underline;
 }
 .btn{
@@ -123,7 +127,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     margin-left:3px;
 }
 button{
-    color:rgb(125,125,235);
+    color:rgb(147, 97, 37);
     border:none;
     background-color:transparent;
     font-size:1rem;
@@ -131,7 +135,7 @@ button{
 }
 button:hover{
     text-decoration:underline;
-    color:blue;
+    color:rgb(217, 130, 23);
 }
 
 .hero {
