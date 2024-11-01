@@ -14,6 +14,27 @@ The primary objectives of Sprint 1 are:
 
 --- 
 
+### Participants
+
+|Role|Name|
+|----|----|
+| Frontend | Omer |
+| Frontend | Haisam |
+| Fullstack | Yuriy | 
+| Backend | Stefewn |
+| Backend | Daniel |
+
+All team members were present. 
+
+### Team Capacity:
+
+  Total Hours Available: 120 hours
+      Omer: 20 hours
+      Haisam: 20 hours
+      Yuriy: 25 hours
+      Stefewn: 25 hours
+      Daniel: 30 hours
+
 ### Sprint Scope
 **Epic 1: User Login & Account Creation**
 - User Stories:
