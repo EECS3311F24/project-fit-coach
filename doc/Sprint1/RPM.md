@@ -1,7 +1,7 @@
 # Release Planning Meeting
-Date: October 26, 2024
-Project Name: FitCoach
-Release version: 1.0.0
+**Date:** October 26, 2024
+**Project Name:** FitCoach
+**Release version:** 1.0.0
 
 ## Meetings for this sprint
 See the [standups.md](standups.md) for more details about each meeting. The location for all meetings took place over Discord and all team members were present for each meeting.
@@ -33,11 +33,11 @@ The scope for this release includes the following key features and epics:
         <ul>
             <li>User Story 4: Remember me Feature</li>
         </ul>
-        <li>Feature 1.3: Allowing a remember me button that remembers the user, which simplifies the login step</li>
+        <li>Feature 1.3: Allowing a remember me button that remembers the user, which simplifies the login step.</li>
         <ul>
             <li>User Story 4: Remember me Feature</li>
         </ul>
-        <li>Features 1.4: Allowing the user to enter their current weight and view previous ones.</li>
+        <li>Feature 1.4: Allowing the user to enter their current weight and view previous ones.</li>
         <ul>
             <li>User Story 7: Record Weight, in pounds, kilograms, or stones</li>
         </ul>
@@ -51,7 +51,7 @@ The scope for this release includes the following key features and epics:
         <ul>
             <li>User Story 6: Customize page colors</li>
         </ul>
-        <li>Feature 2.2: Allow the user to put workouts in.</li>
+        <li>Feature 2.2: Allow the user to input workouts in.</li>
         <ul>
             <li>User Story 8: Create workout routines</li>
             <li>User Story 16: Workouts for long-term goals</li>
@@ -86,7 +86,7 @@ The scope for this release includes the following key features and epics:
         <ul>
             <li>User Story 14: Appropriate macronutrient goals for protein, carbs, and fats</li>
         </ul>
-        <li>Feature 4.3: Calorie allowed to eat for the rest of the day.</li>
+        <li>Feature 4.3: Displays the number of calories allowed to eat for the rest of the day.</li>
         <ul>
             <li>User Story 13: Track macronutrients consumed vs. remaining</li>
         </ul>
@@ -117,4 +117,4 @@ Used in this sprint
 ### Estimated Timeline
 - **Sprint 1**: [3/11/2024] - Focus on User login & account creation and slightly on Customization
 - **Sprint 2**: [17/11/2024] - Focus on Customization and slightly on User Interface Enhancements
-- **Sprint 3**: [1/12/2024] - Focus on User Interface Enhancements and slightly on
+- **Sprint 3**: [1/12/2024] - Focus on User Interface Enhancements and slightly on ????????????
