@@ -27,7 +27,6 @@ The primary objectives of Sprint 1 are:
 All team members were present. 
 
 ### Team Capacity:
-
 **Total Hours Available: 120 hours
   - Omer: 20 hours
   - Haisam: 20 hours
