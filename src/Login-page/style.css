@@ -36,7 +36,7 @@ input{
 input:focus{
     background-color: transparent;
     outline:transparent;
-    border-bottom:2px solid hsl(327,90%,28%);
+    border-bottom:2px solid hsl(0, 0%, 100%);
 }
 input::placeholder{
     color:transparent;
@@ -51,7 +51,7 @@ label{
 }
 input:focus~label,input:not(:placeholder-shown)~label{
     top:-3em;
-    color:hsl(327,90%,28%);
+    color:hsl(0, 0%, 100%);
     font-size:15px;
 }
 .recover{
@@ -167,7 +167,8 @@ button:hover{
 }
 
 .button-box {
-    width: 250px;
+    width: 50%;
+    height: 40px;
     margin: 35px auto;
     position: relative;
     box-shadow: 0 0 20px 9px #4e4e4e44;
@@ -175,6 +176,7 @@ button:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 /* Hide the radio inputs */
@@ -184,14 +186,15 @@ button:hover{
 
 /* Toggle Button Base Styles */
 .toggle-btn {
-    padding: 10px 30px;
+    width: 250px;
+    margin-top: 100px;
     cursor: pointer;
     background: transparent;
     border: 0;
     outline: none;
     color: lightgrey;
     font-weight: bold;
-    position: relative;
+    
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
