@@ -4,7 +4,7 @@ Project Name: FitCoach
 Release version: 1.0.0
 
 ## Meetings for this sprint
-See the [standups.md](standups.md) for more details about each meeting.
+See the [standups.md](standups.md) for more details about each meeting. The location for all meetings took place over Discord and all team members were present for each meeting.
 - October 22th, 2024
 - October 24th, 2024
 - October 26th, 2024
