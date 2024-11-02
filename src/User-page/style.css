@@ -21,11 +21,14 @@
     background-color: #12171e;
     padding: 0.4rem 0.8rem;
     transition: all 0.5s ease;
+    z-index: 10;
 }
 
 .sidebar.active ~ .header{
     left: 250px;
     width: calc(100% - 250px);
+    /*margin-left: -170px; /* Shift left by the difference when sidebar expands */
+    transition: all 0.5s ease; 
 }
 
 .sidebar.active{
@@ -42,6 +45,7 @@
     font-size: 1.2rem;
     line-height: 50px;
     transform: translateX(-50%);
+    cursor: pointer;
 }
 
 .sidebar.active #btn{
@@ -150,12 +154,13 @@
 .header{
     position: fixed;
     background-color: #1a212b;
-    /*min-height: 100vh;*/
     top: 0;
-    left: 80px;
+    left: 80px; /* Initial position when sidebar is collapsed */
+    width: calc(100% - 80px); /* Adjusts to sidebar width */
+    height: 100px;
     transition: all 0.5s ease;
-    width: calc(100% - 80px);
-    z-index: 10;
+    z-index: 5;
+   
 }
 
 .header header {
@@ -168,6 +173,9 @@
     padding: 15px 20px;
     font-size: 20px;
     height: 100px;
+    transition: margin-left 0.5s ease; /* Smooth transition */
+    margin-left: 0; /* Initial position */
+    
 }
 
 #header-button {
@@ -192,7 +200,7 @@
 
 .main-content{
     position: relative;
-    background-color: #0A3D62;
+    background-color: #1d2229;
     min-height: 100vh;
     top: 0;
     left: 80px;

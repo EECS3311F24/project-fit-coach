@@ -8,19 +8,59 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMUybBfZZfHZp00KHq+YhZOfKJj8HT6z4FSBiD4" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="user.style.css">
-
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+
+
+    <div class="header">
+        <header>
+            <span><h1>Fit Coach</h1></span>
+            <i class='bx bx-user' id="header-button"></i>
+        </header>
+    </div>
+
+    <div class="main-content">
+        <div class="calendar-container">
+            <div class="calender">
+                <div class="head">
+                    <button id="prevBtn">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="monthYear" id="monthYear"></div>
+                    <button id="nextBtn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="days">
+                    <div class="day">Mon</div>
+                    <div class="day">Tue</div>
+                    <div class="day">Wed</div>
+                    <div class="day">Thu</div>
+                    <div class="day">Fri</div>
+                    <div class="day">Sat</div>
+                    <div class="day">Sun</div>
+                </div>
+                <div class="dates" id="dates"></div>
+            </div>
+
+            <div class="input-fields">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" placeholder="Enter weight">
+
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" placeholder="Enter height">
+            </div>
+        </div>
+    </div>
+
     <div class="sidebar">
         <div class="top">
-                <div class="logo">
-                    <span>Fit Coach</span>
-                </div>
-                <i class="bx bx-menu" id="btn"></i>
+            <div class="logo">
+                <span>Fit Coach</span>
+            </div>
+            <i class="bx bx-menu" id="btn"></i>
         </div>
         <div class="user">
             <img src="images/fitcoach.webp" alt="fitcoach" class="user-img">
@@ -36,15 +76,13 @@
                 </a>
                 <span class="tooltip">Workouts</span>
             </li>
-            
             <li>
                 <a href="nutrition.html">
-                    <i class='bx bx-baguette' ></i>
+                    <i class='bx bx-baguette'></i>
                     <span class="nav-item">Nutrition</span>
                 </a>
                 <span class="tooltip">Nutrition</span>
             </li>
-
             <li>
                 <a href="TOS.html">
                     <i class='bx bx-edit-alt'></i>
@@ -52,7 +90,6 @@
                 </a>
                 <span class="tooltip">TOS</span>
             </li>
-
             <li>
                 <a href="">
                     <i class='bx bx-book'></i>
@@ -60,81 +97,19 @@
                 </a>
                 <span class="tooltip">About us</span>
             </li>
-            
-
-
-
-
         </ul>
-
-
-
-
-
     </div>
 
-    
-    
+    <script src="user.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let btn = document.querySelector('#btn');
+            let sidebar = document.querySelector('.sidebar');
 
-
-<div class="header">
-    <header>
-        <span><h1>Fit Coach</h1></span>
-        <i class='bx bx-user' id="header-button"></i>
-      </header>
-</div>
-
-
-
-
-<div class="main-content">
-
-    <div class="calendar-container">
-        <div class="calender">
-            <div class="head">
-                <button id="prevBtn">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <div class="monthYear" id="monthYear"></div>
-                <button id="nextBtn">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-            <div class="days">
-                <div class="day">Mon</div>
-                <div class="day">Tue</div>
-                <div class="day">Wed</div>
-                <div class="day">Thu</div>
-                <div class="day">Fri</div>
-                <div class="day">Sat</div>
-                <div class="day">Sun</div>
-
-            </div>
-            <div class="dates" id="dates"></div>
-        </div>
-
-        <div class="input-fields">
-            <label for="weight">Weight (kg):</label>
-            <input type="number" id="weight" name="weight" placeholder="Enter weight">
-
-            <label for="height">Height (cm):</label>
-            <input type="number" id="height" name="height" placeholder="Enter height">
-        </div>
-    </div>
-
-
-</div>
-<script src="user.js"></script>
-
+            btn.onclick = function() {
+                sidebar.classList.toggle('active');
+            };
+        });
+    </script>
 </body>
-
-
-<script>
-    let btn = document.querySelector('#btn');
-    let sidebar = document.querySelector('.sidebar')
-
-    btn.onclick = function(){
-        sidebar.classList.toggle('active');
-    };
-</script>
 </html>
