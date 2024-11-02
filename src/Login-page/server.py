@@ -1,6 +1,7 @@
-from flask import Flask, request, redirect, url_for  # type: ignore
+from flask import Flask, request, redirect, send_from_directory, url_for
 import sqlite3
 import hashlib
+import os
 
 app = Flask(__name__)
 
@@ -17,9 +18,11 @@ def login():
     conn.close()
 
     if user:
-        return redirect("../User-page/user.html")
+        return redirect(url_for('static', filename='main.html'))
     else:
         return "Login failed!", 401
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
