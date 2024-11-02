@@ -1,109 +1,336 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing:border-box;
+    font-family: sans-serif;
 }
 
-.hero{
+form{
+    margin:0 2rem;
+}
+.form-title{
+    color: rgb(217, 217, 217);
+    font-size:2rem;
+    font-weight:bold;
+    text-align:center;
+    padding:1.3rem;
+    margin-bottom:0.4rem;
+}
+input{
+    color:inherit;
+    width:100%;
+    background-color:transparent;
+    border:none;
+    border-bottom:1px solid #757575;
+    padding-left:1.5rem;
+    font-size:15px;
+}
+.input-group{
+    padding:1% 0;
+    position:relative;
+
+}
+.input-group i{
+    position:absolute;
+    color:black;
+}
+input:focus{
+    background-color: transparent;
+    outline:transparent;
+    border-bottom:2px solid hsl(0, 0%, 100%);
+}
+input::placeholder{
+    color:transparent;
+}
+label{
+    color:#757575;
+    position:relative;
+    left:1.2em;
+    top:-1.3em;
+    cursor:auto;
+    transition:0.3s ease all;
+}
+input:focus~label,input:not(:placeholder-shown)~label{
+    top:-3em;
+    color:hsl(0, 0%, 100%);
+    font-size:15px;
+}
+.recover{
+    text-align:right;
+    font-size:1rem;
+    margin-bottom:1rem;
+
+}
+.recover a{
+    text-decoration:none;
+    color:rgb(147, 97, 37);
+    transition: 0.5s;
+}
+.recover a:hover{
+    color:rgb(217, 130, 23);
+    font-size: 1.05rem;
+    transition: 1s;
+    text-decoration:underline;
+}
+.btn{
+    font-size:1.1rem;
+    padding:8px 0;
+    outline:none;
+    width:100%;
+    color:white;
+    cursor:pointer;
+    transition:0.9s;
+    background: linear-gradient(90deg, #91806481, #75747477);
+    border-radius: 30px;
+    border: 0;
+    box-shadow: 0 0 20px 9px #4e4e4e44;
+}
+.btn:hover{
+    background:#07001f;
+}
+.icons{
+    text-align:center;
+}
+.icons i{
+    padding:0.8rem 1.5rem;
+    border-radius:10px;
+    font-size:1.2rem;
+    cursor:pointer;
+    border:2px solid #dfe9f5;
+    margin:0 15px;
+    margin-top: 10px;
+    transition:1s;
+    
+    outline:none;
+    color:white;
+    cursor:pointer;
+    transition:0.9s;
+    background: linear-gradient(90deg, #91806481, #75747477);
+    border-radius: 30px;
+    border: 0;
+    box-shadow: 0 0 20px 9px #4e4e4e44;
+}
+.icons i:hover{
+    background:#07001f;
+    font-size:1.6rem;
+    border:2px solid rgb(255, 255, 255);
+}
+.links{
+    display:flex;
+    justify-content:space-around;
+    padding:0 4rem;
+    margin-top:0.9rem;
+    font-weight:bold;
+}
+
+.links button{
+    margin-left:3px;
+}
+button{
+    color:rgb(147, 97, 37);
+    border:none;
+    background-color:transparent;
+    font-size:1rem;
+    font-weight:bold;
+}
+button:hover{
+    text-decoration:underline;
+    color:rgb(217, 130, 23);
+}
+
+.hero {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(kettlebell-gym-equipment-still-life.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                      url(images/kettlebell-gym-equipment-still-life.jpg);
     background-position: center;
     background-size: cover;
     position: absolute;
 }
 
-.form-box{
-    width: 380px;
-    height: 480px;
-    position: relative;
+.form-box {
+    width: 450px;
+    height: auto;
     margin: 6% auto;
-    position: relative;
-    margin: 6% auto;
-    background: #f9f8f546;
-    padding: 5px;
+    background: rgba(60, 60, 60, 0.85); /* Darker gray with slight transparency */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    padding: 20px;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.button-box{
+/* Logo Styling */
+.logo {
+    width: 80px; /* Adjust to preferred size */
+    height: auto;
+    margin-bottom: 15px; /* Space between logo and header */
+}
 
-    width: 250px;
+.button-box {
+    width: 50%;
+    height: 40px;
     margin: 35px auto;
     position: relative;
-    box-shadow: 0 0 20px 9px #fdfefd;
+    box-shadow: 0 0 20px 9px #4e4e4e44;
     border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
-.toggle-btn{
-
-padding: 10px 30px;
-cursor: pointer;
-background: transparent ;
-border: 0;
-outline: none;
-position: relative;
-
+/* Hide the radio inputs */
+.toggle-input {
+    display: none;
 }
 
-#btn{
+/* Toggle Button Base Styles */
+.toggle-btn {
+    width: 250px;
+    margin-top: 100px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    color: lightgrey;
+    font-weight: bold;
+    
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Active State for Log In Button */
+#login:checked + label[for="login"] {
+    color: white;
+}
+
+/* Inactive State for Register Button */
+#login:checked ~ label[for="register"] {
+    background-color: transparent;
+    color: lightgrey;
+}
+
+/* Active State for Register Button */
+#register:checked + label[for="register"] {
+    color: white;
+}
+
+/* Inactive State for Log In Button */
+#register:checked ~ label[for="login"] {
+    background-color: transparent;
+    color: lightgrey;
+}
+
+/* The moving #btn indicator */
+#btn {
+    position: absolute;
+    width: 100px;
+    height: 5px;
+    top: 50px;
+    left: 5px;
+    border-radius: 5px;
+    background-color: blue;
+    transition: 0.3s;
+}
+
+/* Position #btn based on selected radio button */
+#register:checked ~ #btn {
+    left: 135px;
+}
+
+
+/* Pressing Animation for Toggle Button */
+.toggle-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px 5px #393a3937;
+}
+
+#btn {
     top: 0;
     left: 0;
     position: absolute;
     width: 110px;
     height: 100%;
-    background: linear-gradient(90deg, #b4e2ca, #757474);
+    background: linear-gradient(90deg, #918064e1, #75747477);
     border-radius: 30px;
-    transition: .5s;
-   
-
-
-
-
+    transition: 0.5s;
+    z-index: 0;  /* Ensure the slider stays behind the text */
 }
 
-.input-group{
-
-    top: 180px;
-    position: absolute;
-    width: 280px;
-    transition: .5s;
-
-}
-
-.input-field{
-
+.input-group {
     width: 100%;
-    padding: 10px 0;
-    margin: 5px 0;
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
+    margin-top: 20px;
+}
+
+.input-field {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
     border-bottom: 1px solid #090909;
     outline: none;
     background: transparent;
-    box-shadow: 0 0 20px 9px #fdfefd;
-    
-
-
+    box-shadow: 0 0 20px 9px #1a1b1a37;
+    border-radius: 10px;
+    color: lightgrey; /* Set input text color to light grey */
+    font-size: 16px; /* Optional: Adjust font size */
 }
 
-.chech-box{
-
-    box-shadow: 0 0 20px 9px #fdfefd7c;
+.input-field::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* Change placeholder color to light grey */
+    opacity: 1; /* Ensures full opacity */
 }
 
+.check-box {
+    background: transparent; /* Make the checkbox background transparent */
+    border: none; /* Remove the border */
+    outline: none; /* Remove outline if present */
+    box-shadow: none; /* Remove box shadow or adjust as needed */
+    margin: 30px 10px 30px 0;
+    cursor: pointer;
+}
 
+span {
+    color: lightgrey; /* Set span text color to light grey */
+    font-size: 12px;
+    margin-top: 15px;
+}
 
-.submit-btn{
-
+.submit-btn {
     width: 85%;
     padding: 10px 30px;
-    margin: auto;
-   cursor: pointer;
-   display: block;
-    background: linear-gradient(90deg, #b4e2ca, #757474);
-    border: 0;
+    cursor: pointer;
+    
     outline: none;
+    background: linear-gradient(90deg, #91806481, #75747477);
     border-radius: 30px;
-    box-shadow: 0 0 20px 9px #fdfefd;
+    border: 0;
+    box-shadow: 0 0 20px 9px #4e4e4e44;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: lightgrey; /* Set submit button text color to light grey */
+}
 
+/* Pressing Animation for Submit Button */
+.submit-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px 5px #4e4e4e44;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .form-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .button-box {
+        width: 90%;
+    }
+
+    .input-field {
+        font-size: 14px;
+    }
 }

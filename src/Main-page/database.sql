@@ -1,2 +1,0 @@
-CREATE DATABASE IF NOT EXISTS eecs3311project;
-USE eecs3311project;
