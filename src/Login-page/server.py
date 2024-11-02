@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template_string
+from flask import Flask, request, redirect, url_for  # type: ignore
 import sqlite3
 import hashlib
 
@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/login', methods=['POST'])
 def login():
-    username = request.form['username']
+    username = request.form['email']
     password = request.form['password']
     hashed_password = hashlib.sha256(password.encode()).hexdigest()
 
@@ -17,7 +17,7 @@ def login():
     conn.close()
 
     if user:
-        return "Login successful!"
+        return redirect("../User-page/user.html")
     else:
         return "Login failed!", 401
 

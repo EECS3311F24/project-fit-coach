@@ -6,9 +6,13 @@
         <title>Login And Registration Form</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.10.2/core.css">
+        <script type="module" src="https://pyscript.net/releases/2024.10.2/core.js"></script>
+
     </head>
     <body>
 
+        <!-- <script type="py" src="./server.py" config="./pyscript.json"></script> -->
         <div class="hero">
             <div class="form-box">
 
@@ -41,7 +45,7 @@
                             <label for="password">Password</label>
                         </div>
 
-                        <input type="submit" class="btn" value="Sign Up" name="singUp">
+                        <input type="submit" class="btn" value="Sign Up" name="signUp">
                     </form>
                     <div class="icons">
                         <i class="fab fa-google"></i>
@@ -56,7 +60,7 @@
                 <!-- Login division -->
                 <div class="container" id="signIn">
                     <h1 class="form-title">Sign In</h1>
-                    <form method="post" action="">
+                    <form method="post" action="http://127.0.0.1:5000/login">
                         <div class="input-group">
                             <i class="fas fa-envelope"></i>
                             <input type="text" name="email" id="email" placeholder="Email" required>
@@ -71,7 +75,7 @@
                             <a href="#">Recover Password</a>
                         </p>
 
-                        <input type="submit" class="btn" value="Sign In" name="singIn">
+                        <input type="submit" class="btn" value="Sign In" name="signIn">
                     </form>
                     <div class="icons">
                         <i class="fab fa-google"></i>
