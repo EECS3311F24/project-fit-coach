@@ -1,30 +1,124 @@
+/* Base Light Theme (Default) */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Dark Mode Toggle Button */
+.theme-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left: 20px; /* Adds spacing to the left of the Dark Mode button */
+}
+
+body.dark-mode .theme-btn {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Dark Theme */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f8f8f8;
+}
+
+/* Dark Mode for Navbar */
+body.dark-mode .navbar {
+    background-color: #333;
+    box-shadow: 0 4px 2px -2px #555;
+}
+
+body.dark-mode .navbar a {
+    color: #f8f8f8;
+}
+
+body.dark-mode .navbar a:hover {
+    color: #ff6b35;
+}
+
+/* Dark Mode for Login/Register Button */
+body.dark-mode .login-btn {
+    background-color: #333;
+    color: #333;
+}
+
+body.dark-mode .login-btn:hover {
+    background-color: #dcdcdc;
+    color: #1a1a1a;
+}
+
+/* Dark Mode for Main Content Button */
+body.dark-mode .btn {
+    background-color: #333;
+    color: #f8f8f8;
+}
+
+body.dark-mode .btn:hover {
+    background-color: #444;
+}
+
+/* Dark Mode for Footer */
+body.dark-mode footer {
+    background-color: #333;
+    color: #f8f8f8;
+    box-shadow: 0 -4px 2px -2px #555;
 }
 
 /* Navigation Bar */
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center; /* Align items on the same line */
     background-color: #fff;
-    padding: 15px 0;
+    padding: 15px 100px;
     box-shadow: 0 4px 2px -2px gray;
     position: sticky;
     top: 0;
+    gap: 15px; /* Adjusts spacing between navbar items */
+}
+
+/* Links Group */
+.nav-links {
+    display: flex;
+    gap: 20px; /* Space between individual links */
+    padding-top: 5px; /* Adjust this to control how far down the links are */
+    flex-grow: 1;
+    justify-content: center; /* Center the links within the group */
 }
 
 .navbar a {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    padding: 0 15px;
+    transition: color 0.3s ease;
 }
 
 .navbar a:hover {
     color: #ff6b35;
+}
+
+/* Login/Register Button */
+.navbar .login-btn {
+    background-color: #ff6b35;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .login-btn:hover {
+    background-color: #e65c2d;
+    color: white;
 }
 
 /* Main Content */
@@ -61,6 +155,7 @@ body {
     font-size: 18px;
     cursor: pointer;
     text-transform: uppercase;
+    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
@@ -77,7 +172,7 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #fff;
-    position: fixed;
+    position: relative; /* Change from fixed to relative */
     bottom: 0;
     width: 100%;
     box-shadow: 0 -4px 2px -2px gray;
