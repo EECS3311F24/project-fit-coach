@@ -117,4 +117,4 @@ Used in this sprint
 ### Estimated Timeline
 - **Sprint 1**: [3/11/2024] - Focus on User login & account creation and slightly on Customization
 - **Sprint 2**: [17/11/2024] - Focus on Customization and slightly on User Interface Enhancements
-- **Sprint 3**: [1/12/2024] - Focus on User Interface Enhancements and slightly on ????????????
+- **Sprint 3**: [1/12/2024] - Focus on User Interface Enhancements and slightly on tracking the workouts while maintaining a streak
