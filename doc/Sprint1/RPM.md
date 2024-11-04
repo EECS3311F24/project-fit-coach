@@ -6,11 +6,12 @@
 ## Meetings for this sprint
 See the [standups.md](standups.md) for more details about each meeting. The location for all meetings took place over Discord and all team members were present for each meeting.
 - October 22th, 2024
-- October 24th, 2024
+- October 24th, 2024 
 - October 26th, 2024
 - October 28th, 2024
 - October 30th, 2024
 - November 1st, 2024
+- November 3rd, 2024
 
 ### Release Goal
 The primary objective of this release is to deliver a fully functional version of FitCoach that meets the core requirements specified in the backlog.
