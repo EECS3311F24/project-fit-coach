@@ -1,17 +1,9 @@
-[] - Sprint 1 Standup #
-1. What did you work on since the last standup?
-2. What do you commit to next?
-3. When do you think you'll be done?
-4. Do you have any blockers? 
-
----
-
 [2024-10-22] - Sprint 1 Standup #1
 1. What have you worked on since the last standup?
 Because this is the first standup, there is no standup to compare, however, after the submission of Sprint 0, we briefly looked at the Sprint 1 requirements. 
-2. What do you commit to next? Starting RPM.md and sprint1.md.
-3. When do you think you'll be done? Saturday, October 26th.
-4.  Do you have any blockers?
+1. What do you commit to next? Starting RPM.md and sprint1.md.
+2. When do you think you'll be done? Saturday, October 26th.
+3.  Do you have any blockers?
     - None so far.
    
 ---
@@ -58,3 +50,10 @@ Because this is the first standup, there is no standup to compare, however, afte
 3. When do you think you'll be done? Saturday, November 2nd.
 4. Do you have any blockers?
     - Learn how to make this server automatically run without running the server file by hand.
+
+[2024-11-3] - Sprint 1 Standup #7
+1. What have you worked on since the last standup? We recorded the demo video and finished some of the extra things like SR1.md and the CRC cards.
+2. What do you commit to next? Submitting sprint 1 on github and planning the start of sprint2
+3. When do you think you'll be done? Saturday, November 3rd.
+4. Do you have any blockers?
+    - Understanding how to host our website on a free hosting service (maybe Netlify)
