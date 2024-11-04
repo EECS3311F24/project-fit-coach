@@ -5,6 +5,11 @@ In today's fitness-driven world, a platform that tracks nutrition and workout pr
 
 It's a one-stop solution for improving health, fitness, and overall performance.
 
+## Demo Video
+The Demo video for sprint1: [video](doc/Sprint1/sprint1demo.mp4) or [youtube link](https://www.youtube.com/watch?v=T9BlZoKfMPM)
+
+NOTE: to view the video as an mp4 file, it should be downloaded
+
 ## Current Features
 - Main page which contains some information about our project and a button to the login page.
 - Login page which allows the users to log in if they have an existing account or register if they're new to the website.
