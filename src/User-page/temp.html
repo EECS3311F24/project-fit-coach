@@ -5,43 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Header with Button</title>
   <style>
-    /* Styling for the header */
-    header {
-      background-color: #007BFF; /* Blue color */
-      color: white;
-      padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 20px;
-    }
+    
 
-    /* Styling for the button */
-    .header-button {
-      background-color: white;
-      color: #007BFF;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 16px;
-      transition: background-color 0.3s;
-    }
-
-    /* Hover effect for the button */
-    .header-button:hover {
-      background-color: #f0f0f0;
-    }
   </style>
 </head>
 <body>
-  <header>
-    <span>My Website</span>
-    <button class="header-button">Click Me</button>
-  </header>
+  
 
-  <main>
-    <p>Welcome to the website!</p>
-  </main>
+
+  <button onclick="openfn()">
+    Log workout
+  </button>
+
+  <div id="overlay" class="hidden"></div>
+  <div id="workoutwindow" class="hidden">
+      <p>
+          Welcome to a more stylish
+          GeeksforGeeks experience!
+      </p>
+      <button onclick="openFn()">
+          Close
+      </button>
+  </div>
+</div>
+
+
+  <script>
+    function openFn() {
+        const over =document.getElementById("overlay");
+        const popDialog =document.getElementById("popupDialog");
+        over.classList.toggle("hidden");
+        popDialog.classList.toggle("hidden");
+        popDialog.style.opacity = popDialog.style.opacity ==="1" ? "0" : "1";
+    }
+</script>
+
+
+
 </body>
 </html>

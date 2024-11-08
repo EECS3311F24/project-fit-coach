@@ -13,7 +13,7 @@
 
 
 .sidebar{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -200,7 +200,11 @@
 
 .main-content{
     position: relative;
+<<<<<<< Updated upstream:src/User-page/style.css
     background-color: #1d2229;
+=======
+    background-color: #1a212b;
+>>>>>>> Stashed changes:src/User-page/user.style.css
     min-height: 100vh;
     top: 0;
     left: 80px;
@@ -223,18 +227,20 @@
 
 .calender {
 	width: 380 px;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+	/*height: auto;*/
+	display: absolute;
+	/*flex-direction: column;*/
 	padding: 5px;
 	background: #496ea097;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0,0,0,0.3);
     align-self: flex-start;
    /*float: left;*/
-    margin-top: 10%;
-    margin-left: 20%;
-   transform: scale(1.5, 1.5);
+    /*margin-top: 10%;*/
+    /*margin-left: 10%;*/
+   transform: scale(1, 1);
+   top: 100px;
+   left: 100px ;
 
  
 }
@@ -258,8 +264,8 @@ border: none;
 border-radius: 50%;
 background: #a9cd24;
 cursor: pointer;
-width: 40px;
-height: 40px;
+width: 20px;
+height: 20px;
 box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 
 
@@ -344,16 +350,17 @@ color: #fff;
     .input-fields {
     display: flex;
     flex-direction: column;
+    height: 200px;
     gap: 10px;
     padding: 10px;
-    background-color: #f4f4f463;
+    background-color: #496ea097;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     width: 180px;
     transform: scale(1.5,1.5);
     /*margin: auto;
     margin-top: 10%;*/
-    margin-top: 10%;
+    margin-top: 15%;
     margin-left: 20%;
     
     
@@ -361,7 +368,7 @@ color: #fff;
 
 .input-fields label {
     font-weight: 600;
-    color: #333;
+    color: #BLACK;
 }
 
 .input-fields input {
@@ -369,4 +376,17 @@ color: #fff;
     border-radius: 4px;
     border: 1px solid #dddddd59;
     font-size: 1rem;
+}
+
+#workout-btn{
+    position: absolute;
+    bottom: 2px;
+    left: 50%; 
+    
+    
+}
+
+html, body {
+    overflow: hidden; /* Remove scrollbars */
+    height: 100%; /* Ensure the body takes full height */
 }
