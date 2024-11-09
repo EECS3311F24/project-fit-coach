@@ -13,10 +13,10 @@
 
 
 .sidebar{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 200vh;
     width: 80px;
     background-color: #12171e;
     padding: 0.4rem 0.8rem;
@@ -38,7 +38,7 @@
 
 
 .sidebar #btn{
-    position: absolute;
+    position: relative;
     color: #fff;
     top: 0.4rem;
     left: 50%;
@@ -131,7 +131,7 @@
 }
 
 .sidebar ul li .tooltip{
-    position: absolute;
+    position: relative;
     left: 125px;
     top: 50%;
     transform: translate(-50%,-50%);
@@ -221,20 +221,30 @@
     
   }*/
 
+  .body{
+
+position: relative;
+
+
+
+
+  }
+
 .calender {
-	width: 380 px;
-	height: auto;
+	width: 380px;
+	height: 400px;
 	display: flex;
 	flex-direction: column;
-	padding: 5px;
+	padding: 10px;
 	background: #496ea097;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0,0,0,0.3);
     align-self: flex-start;
    /*float: left;*/
-    margin-top: 10%;
+    top: 100px;
+    bottom: 200px;
     margin-left: 20%;
-   transform: scale(1.5, 1.5);
+   transform: scale(1, 1);
 
  
 }
@@ -258,8 +268,8 @@ border: none;
 border-radius: 50%;
 background: #a9cd24;
 cursor: pointer;
-width: 40px;
-height: 40px;
+width: 30px;
+height: 30px;
 box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 
 
@@ -342,19 +352,18 @@ color: #fff;
 
 }
     .input-fields {
+    position: absolute;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 10px;
-    background-color: #f4f4f463;
+    background-color: #496fa0;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     width: 180px;
     transform: scale(1.5,1.5);
-    /*margin: auto;
-    margin-top: 10%;*/
-    margin-top: 10%;
-    margin-left: 20%;
+   top: 150px;
+   right: 300px;
     
     
 }
@@ -369,4 +378,34 @@ color: #fff;
     border-radius: 4px;
     border: 1px solid #dddddd59;
     font-size: 1rem;
+}
+
+#workout-btn{
+
+position: absolute;
+background-color: #496ea097;
+color: white;
+bottom: 150px;
+left: 300px;
+width: 350px;
+cursor: pointer;
+margin-top: 20% ;
+border-radius: 10px;
+height: 10%;
+box-shadow: white;
+padding: 5px;
+text-shadow: 5px #12171e;
+}
+
+#nextBtn{
+
+
+}
+
+
+#prevBtn{
+
+
+
+
 }
