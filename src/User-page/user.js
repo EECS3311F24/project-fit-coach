@@ -1,3 +1,12 @@
+function openFn() {
+    const over = document.getElementById("overlay");
+    const popDialog = document.getElementById("popupDialog");
+    over.classList.toggle("visible");
+    popDialog.classList.toggle("visible");
+}
+
+
+
 let btn = document.querySelector('#btn')
 let sidebar = document.querySelector('sidebar')
 btn.onclick = function(){

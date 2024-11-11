@@ -57,7 +57,17 @@
             </div>
         </div>
 
-        <button id="workout-btn">Log New Workout</button>
+        <button id="workout-btn" onclick="openFn()">Log new Workout</button>
+
+        <div id="overlay"></div>
+          <div id="popupDialog">
+              <button class="close-btn" onclick="openFn()">×</button>
+              <p>
+                  Add a new workout to your log. Please enter the date, exercise, weight, and reps for each
+              </p>
+          </div>
+
+        
     </div>
 
     <div class="sidebar">

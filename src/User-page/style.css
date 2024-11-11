@@ -380,22 +380,89 @@ color: #fff;
     font-size: 1rem;
 }
 
+/* ---------- Log workout ---------- */
 #workout-btn{
 
-position: absolute;
-background-color: #496ea097;
-color: white;
-bottom: 150px;
-left: 300px;
-width: 350px;
-cursor: pointer;
-margin-top: 20% ;
-border-radius: 10px;
-height: 10%;
-box-shadow: white;
-padding: 5px;
-text-shadow: 5px #12171e;
+    position: absolute;
+    background-color: #496ea097;
+    color: white;
+    bottom: 150px;
+    left: 300px;
+    width: 350px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
 }
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+}
+
+#overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#popupDialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 90vw;
+    height: 90vh;
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+}
+
+#popupDialog.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+}
+
+
+
 
 #nextBtn{
 
