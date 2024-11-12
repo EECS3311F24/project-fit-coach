@@ -61,11 +61,44 @@
 
         <div id="overlay"></div>
           <div id="popupDialog">
-              <button class="close-btn" onclick="openFn()">×</button>
-              <p>
-                  Add a new workout to your log. Please enter the date, exercise, weight, and reps for each
-              </p>
+            <h1>Log here your workout</h1>
+            <table class="exercise-table" id="exerciseTable">
+                <thead>
+                    <tr>
+                        <th id="exercise-table-header">Exercise</th>
+                        <th id="exercise-table-header">Reps</th>
+                        <th id="exercise-table-header">Weight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>1
+                            <input type="text" class="input-field" placeholder="Exercise">
+                        </td>
+                        <td>
+                            <div class="sets-container">
+                                <div class="input-group">
+                                    <span>Set 1<input type="text" class="input-field" placeholder="Reps"></span>
+                                </div>
+                            </div>
+                            <button class="add-row-btn" onclick="addSetRow(this)">Insert Set</button>
+                        </td>
+                        <td>
+                            <div class="sets-container">
+                                <div class="input-group">
+                                    <input type="text" class="input-field" placeholder="Input weight in Kgs">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <button class="add-row-btn" onclick="addExerciseRow()">Add Exercise Row</button>
+            <button class="close-btn" onclick="openFn()">×</button>
           </div>
+          
 
         
     </div>
@@ -108,7 +141,7 @@
             <li>
                 <a href="">
                     <i class='bx bx-book'></i>
-                    <span class="nav-item">About us</span>
+                    <span class="nav-item">About</span>
                 </a>
                 <span class="tooltip">About us</span>
             </li>

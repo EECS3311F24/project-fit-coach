@@ -4,7 +4,55 @@ function openFn() {
     over.classList.toggle("visible");
     popDialog.classList.toggle("visible");
 }
+let exerciseCount = 1;    
+function addSetRow(button) {
+    const exerciseRow = button.closest('tr');
+    const setsContainer = exerciseRow.querySelector('.sets-container');
+    const weightsContainer = exerciseRow.querySelector('td:last-child .sets-container');
+    
+    const currentSetCount = setsContainer.children.length;
+    const newSetNumber = currentSetCount + 1;
+    
+    // Add new reps input
+    const newSetDiv = document.createElement('div');
+    newSetDiv.className = 'input-group';
+    newSetDiv.innerHTML = `<span>Set ${newSetNumber}<input type="text" class="input-field" placeholder="Reps"></span>`;
+    setsContainer.appendChild(newSetDiv);
+    
+    // Add corresponding weight input
+    const newWeightDiv = document.createElement('div');
+    newWeightDiv.className = 'input-group';
+    newWeightDiv.innerHTML = `<input type="text" class="input-field" placeholder="Input weight in Kgs">`;
+    weightsContainer.appendChild(newWeightDiv);
+}
 
+function addExerciseRow() {
+    exerciseCount++;
+    const table = document.getElementById('exerciseTable').getElementsByTagName('tbody')[0];
+
+    const newRow = document.createElement('tr');
+    newRow.innerHTML = `
+        <td>${exerciseCount}
+            <input type="text" class="input-field" placeholder="Exercise">
+        </td>
+        <td>
+            <div class="sets-container">
+                <div class="input-group">
+                    <span>Set 1<input type="text" class="input-field" placeholder="Reps"></span>
+                </div>
+            </div>
+            <button class="add-row-btn" onclick="addSetRow(this)">Insert Set</button>
+        </td>
+        <td>
+            <div class="sets-container">
+                <div class="input-group">
+                    <input type="text" class="input-field" placeholder="Input weight in Kgs">
+                </div>
+            </div>
+        </td>
+    `;
+    table.appendChild(newRow);
+}
 
 
 let btn = document.querySelector('#btn')
