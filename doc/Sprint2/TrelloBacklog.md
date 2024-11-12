@@ -1,15 +1,15 @@
 # Trello Backlog
 ## Feature 1
 ### User Story
-1. As a user, I want to be able to easily create an account to have access to other features [8 points] (Priority: High)
+1. As a user, I want to be able to create workout routines that I can access later on [8 points] (Priority: High)
 ### Acceptance Criteria
-    - The user can enter their details to create an account
+    - The user can enter exercises, sets, and reps into a workout sheet
     - The system checks if all the fields are inputted in correctly and validates the user if needed
-    - The system will create an account for this user and store it in the database
+    - The system will then save this workout and store it in the database
 ### Tasks
-    - Allow user to enter their details in
-    - Have a user friendly design to make it easy for the user
-    - Save the user's login information in the database
+    - Allow user to enter exercises, sets, and reps into a workout sheet
+    - Have a user friendly design of the workout sheet
+    - Save the user's workout information in a database to allow the user to access it later
 ---
 ## Feature 2
 ### User Story
@@ -26,43 +26,37 @@
 ---
 ## Feature 3
 ### User Story
-3. As a user, I want to get an error message if I enter the incorrect login details [6 points] (Priority: Medium)
+3. As a user, I want to be able to record my calories to see how much I have eaten [6 points] (Priority: High)
 ### Acceptance Criteria
-    - The system will validate the user with an error message
-    - The error message will display what went wrong and where the error is
+    - The user can input what and how much of a food they consumed
+    - The system checks if all the fields are inputted in correctly and validates the user if needed
+    - The system will keep track of the calories of each food and add it to the total calorie count for that day 
+    - The system will display this total calorie count to the user
 ### Tasks
-    - Check the user's account details in the database and compare with what the user entered
-    - Send a error to the user while keeping the interface simple
+    - Have a text field that allows the user to input what food and how much of a food they consumed
+    - Build a counter that keeps track of the total calories consumed so far by the user and displays this value to the user
 ---
 ## Feature 4
 ### User Story
-4. As a user, I want to be able to reset my password if I forget which one I used [12 points] (Priority: Medium)
-### Acceptance Criteria
-    - The user can click a button to reset their password
-    - The user will be able to enter their username or email to receive a message
-    - The message will be able to allow the user to change their password into a field
-    - The system checks if all the field is inputted in correctly and validates the user if needed
+4. As a user, I want to know how much macronutrients I have consumed and how much I have left to eat [8 points] (Priority: Medium)
+### Acceptance Criteria 
+    - The user can input what and how much of a food they consumed
+    - The system checks if all the fields are inputted in correctly and validates the user if needed
+    - The system will keep track of the macronutrients of each food and add it to each total macronutrient count of either carbs, protein, or fats
+    - The system will then display the difference of how much of each macronutrient the user needs to consume per day to the current three total macronutrient count of that particular day
 ### Tasks
-    - Add a button for user to click if they forgot there password 
-    - Redirect user to a different page once clicked
-    - Allow user to reset the password
+    - Have a text field that allows the user to input what food and how much of a food they consumed
+    - Build 3 counters that keeps track of each total macronutrient consumed so far by the user and displays these 3 values to the user
+    - Display the difference between how much of each macronutrient the user needs to consume per day to the 3 counters that keeps track of the 3 total macronutrients consumed so far by the user
 ---
 ## Feature 5
 ### User Story
-5. As a user, I want the application I am using to remember my email so I won’t have to sign in every time [8 points] (Priority: Medium)
+5. As a user, if I identify as a beginner I want to have a beginner plan to help me get started [4 points] (Priority: Low)
 ### Acceptance Criteria
-    - The system will recognize it's a user that exists from the database
-    - The system will automatically sign the user in without the user doing anything
+    - The user can input their experience level 
+    - The system checks if the field is inputted in correctly and validates the user if needed
+    - The system will then provide the user with preset beginner workout plans if the user's input was beginner
 ### Tasks
-    - Store the user's email in the database
-    - Be able to retrieve the user's email address quickly through the database
----
-## Feature 6
-### User Story
-6. As a user, I want to be able to customise my page with different colours so I enjoy the looks of the application [16 points] (Priority: Low)
-### Acceptance Criteria
-    - The user can click a button where the user will then be able to choose what colour they want their page to be in
-    - The system will change the colour of the page to be that colour the user wanted
-### Tasks
-    - Have a button for the user to be able to change the colour of the page
-    - Be able to customize the page with different colours with preset templates with different colours
+    - Have a button for the user to input what experience level they are
+    - Build a preset workout plan for beginners
+    - If the user inputs their experience level as a beginner then provide them with the preset workout plans designed for beginners to use
