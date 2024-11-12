@@ -65,3 +65,52 @@ nextBtn.addEventListener('click', () => {
 });
 
 updateCalender();
+
+document.addEventListener('DOMContentLoaded', function() {
+    const weightInput = document.getElementById('weight');
+    const weightUnit = document.getElementById('weight-unit');
+    const heightInput = document.getElementById('height');
+    const heightUnit = document.getElementById('height-unit');
+
+    // Weight unit conversion
+    weightUnit.addEventListener('change', () => {
+        const unit = weightUnit.value;
+
+        // Convert the current weight input value to the selected unit
+        if (weightInput.value) {
+            let weight = parseFloat(weightInput.value);
+            switch (unit) {
+                case 'lbs':
+                    weightInput.value = (weight * 2.20462).toFixed(2); // Convert kg to lbs
+                    break;
+                case 'st':
+                    weightInput.value = (weight * 0.157473).toFixed(2); // Convert kg to stones
+                    break;
+                case 'kg':
+                    weightInput.value = weight; // Assume input is in kg by default
+                    break;
+            }
+        }
+    });
+
+    // Height unit conversion
+    heightUnit.addEventListener('change', () => {
+        const unit = heightUnit.value;
+
+        // Convert the current height input value to the selected unit
+        if (heightInput.value) {
+            let height = parseFloat(heightInput.value);
+            switch (unit) {
+                case 'in':
+                    heightInput.value = (height * 0.393701).toFixed(2); // Convert cm to inches
+                    break;
+                case 'cm':
+                    heightInput.value = height; // Assume input is in cm by default
+                    break;
+            }
+        }
+    });
+});
+
+
+
