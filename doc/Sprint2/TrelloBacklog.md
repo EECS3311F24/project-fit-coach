@@ -17,7 +17,7 @@
 ### Acceptance Criteria
     - The user can input their weight
     - The system checks if the field is inputted in correctly and validates the user if needed
-    - The user is able to switch between much metric they want to track in
+    - The user is able to switch between which metric they want to track in
     - The system stores this data in the database
 ### Tasks
     - Build a formula calculator for pounds, kilograms and stones
