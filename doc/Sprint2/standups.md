@@ -53,3 +53,27 @@
 3. Do you have any blockers?
    - Accessing and retrieving saved calorie data could pose a potential issue.
 
+---
+
+[2024-11-16] - Sprint 2 Standup #5
+1. What have you worked on since the last standup?
+   - Added a calorie calculator that computes daily caloric needs based on user input.
+   - Addressed minor issues with input display formatting.
+2. What do you commit to next?
+   - Finalizing all remaining elements for Sprint 2 and, if time permits, incorporating various themes for the website.
+   - Recording the sprint demo video.
+3. When do you think you'll be done? November 17
+4. Do you have any blockers?
+   - Ensuring the login page seamlessly links to the user’s personal dashboard.
+
+---
+
+[2024-11-17] - Sprint 2 Standup #6
+1. What have you worked on since the last standup?
+   - Recorded the demo video showcasing Sprint 2 features.
+   - Corrected spacing issues on the left side of the menu bar for a polished layout.
+2. What do you commit to next?
+   - Reviewing Sprint 3 requirements and ensuring the workload is distributed equally among team members.
+3. When do you think you'll be done? November 18
+4. Do you have any blockers?
+   - none so far
