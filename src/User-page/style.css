@@ -351,7 +351,8 @@ color: #fff;
 
 
 }
-    .input-fields {
+
+.input-fields {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -487,6 +488,23 @@ color: #fff;
     border-color: #496ea0;
 }
 
+.exercise-frequency-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.exercise-frequency-container select{
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #dddddd59;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
 .height-input-container {
     display: flex;
     align-items: center;
@@ -511,6 +529,48 @@ color: #fff;
 .height-input-container select:focus {
     outline: none;
     border-color: #496ea0;
+}
+
+.gender-container label {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gender-container input[type="radio"] {
+    appearance: none; /* Remove default radio appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* Make it circular */
+    border: 2px solid rgb(28, 51, 80); /* Green border */
+    background-color: white;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gender-container input[type="radio"]:checked {
+    background-color: rgb(0, 34, 80); /* Green when selected */
+    border-color: rgb(62, 96, 141);
+}
+
+.gender-container input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.gender-container input[type="radio"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 
