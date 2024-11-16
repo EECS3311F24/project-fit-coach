@@ -5,6 +5,31 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.btn-calculate {
+    background-color: #393e9d; /* A nice green color */
+    color: white; /* White text for contrast */
+    font-size: 16px; /* Slightly larger text */
+    font-weight: bold; /* Make the text bold */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 20px; /* Add padding for a comfortable size */
+    cursor: pointer; /* Change the cursor to indicate clickability */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.btn-calculate:hover {
+    background-color: #13137b; /* Darker green on hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
+    transform: translateY(-2px); /* Lift the button slightly */
+}
+
+.btn-calculate:active {
+    background-color: #00337b; /* Even darker green when active */
+    transform: translateY(1px); /* Pressed effect */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15); /* Reduced shadow */
+}
+
 /* ---------- Side header ---------- */
 .user-img{
     width: 50px;
