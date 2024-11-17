@@ -7,6 +7,7 @@ It's a one-stop solution for improving health, fitness, and overall performance.
 
 ## Demo Video
 The Demo video for sprint1: [video](doc/Sprint1/sprint1demo.mp4) or [youtube link](https://www.youtube.com/watch?v=T9BlZoKfMPM)
+
 The Demo video for sprint2: [video](doc/Sprint2/sprint2demo.mp4)
 
 NOTE: to view the video as an mp4 file, it should be downloaded
