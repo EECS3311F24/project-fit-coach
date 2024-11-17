@@ -4,6 +4,7 @@ function openFn() {
     over.classList.toggle("visible");
     popDialog.classList.toggle("visible");
 }
+
 let exerciseCount = 1;    
 function addSetRow(button) {
     const exerciseRow = button.closest('tr');
@@ -213,3 +214,50 @@ function saveWorkout() {
 
 
 
+function calculateCalories() {
+    // Fetch input values
+    const weight = parseFloat(document.getElementById("weight").value);
+    const weightUnit = document.getElementById("weight-unit").value;
+    const height = parseFloat(document.getElementById("height").value);
+    const heightUnit = document.getElementById("height-unit").value;
+    const age = parseInt(document.getElementById("age").value);
+    const exerciseFrequency = parseInt(document.getElementById("exercise-frequency").value);
+    const gender = document.querySelector('input[name="gender"]:checked')?.value;
+
+    // Ensure inputs are valid
+    if (!weight || !height || !age || !gender) {
+        alert("Please fill in all fields!");
+        return;
+    }
+
+    // Convert weight to kg if necessary
+    const weightInKg = (weightUnit === "kg") ? weight :
+                       (weightUnit === "lbs") ? weight * 0.453592 :
+                       weight * 6.35029; // st to kg
+
+    // Convert height to cm if necessary
+    const heightInCm = (heightUnit === "cm") ? height :
+                       height * 2.54; // in to cm
+
+    // Calculate BMR
+    let BMR;
+    if (gender === "male") {
+        BMR = (88.362 + (13.397 * weightInKg) + (4.799 * heightInCm) - (5.677 * age))*1.15;
+    } else {
+        BMR = 447.593 + (9.247 * weightInKg) + (3.098 * heightInCm) - (4.330 * age);
+    }
+
+    // Determine activity multiplier based on exercise frequency
+    const activityMultipliers = [1, 1.05, 1.1, 1.15, 1.2, , 1.25, 1.3, 1.35];
+    const activityFactor = activityMultipliers[exerciseFrequency];
+
+    // Calculate TDEE (Total Daily Energy Expenditure)
+    const TDEE = Math.round(BMR * activityFactor);
+
+    // Display result
+    const resultContainer = document.getElementById("calorie-result");
+
+    // alert(`Based on your inputs, your estimated daily calorie needs are ${TDEE} calories.`);
+    resultContainer.textContent = `Your estimated daily calorie needs are: ${TDEE} calories.`;
+    // resultContainer.style.color = "green";
+}
