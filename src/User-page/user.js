@@ -160,5 +160,56 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function saveWorkout() {
+    const table = document.getElementById('exerciseTable');
+    const rows = table.querySelectorAll('tbody tr');
+
+    let workoutData = [];
+
+    rows.forEach(row => {
+        const exercise = row.querySelector('td:nth-child(1) input').value;
+        const repsInputs = row.querySelectorAll('td:nth-child(2) .input-field');
+        const weightInputs = row.querySelectorAll('td:nth-child(3) .input-field');
+
+        let sets = [];
+        repsInputs.forEach((repInput, index) => {
+            sets.push({
+                reps: repInput.value,
+                weight: weightInputs[index].value
+            });
+        });
+
+        workoutData.push({ exercise, sets });
+    });
+
+    // Display the workout data
+    const workoutsList = document.getElementById('workoutsList');
+    workoutData.forEach(workout => {
+        const workoutItem = document.createElement('li');
+        workoutItem.innerHTML = `
+            <strong>Exercise:</strong> ${workout.exercise} <br>
+            <strong>Sets:</strong>
+            <ul>
+                ${workout.sets
+                    .map(
+                        set => `<li>Reps: ${set.reps}, Weight: ${set.weight}</li>`
+                    )
+                    .join('')}
+            </ul>
+        `;
+        workoutsList.appendChild(workoutItem);
+    });
+
+    // Provide feedback to the user
+    alert("Workout saved successfully!");
+
+    // Optionally, clear the input fields
+    rows.forEach(row => {
+        row.querySelector('td:nth-child(1) input').value = '';
+        row.querySelectorAll('td:nth-child(2) .input-field').forEach(input => input.value = '');
+        row.querySelectorAll('td:nth-child(3) .input-field').forEach(input => input.value = '');
+    });
+}
+
 
 

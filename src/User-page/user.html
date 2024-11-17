@@ -73,11 +73,21 @@
             
         </div>
 
-        <button id="workout-btn" onclick="openFn()">Log new Workout</button>
+
+        <div class="workout-section">
+            <button id="workout-btn" class="save-btn" onclick="openFn()">Log New Workout</button>
+            <div id="savedWorkoutsContainer">
+                <h2>Saved Workouts</h2>
+                <ul id="workoutsList">
+                    <!-- Saved workouts will appear here -->
+                </ul>
+            </div>
+        </div>
 
         <div id="overlay"></div>
           <div id="popupDialog">
             <h1>Log here your workout</h1>
+            <button class="save-btn" onclick="saveWorkout()">Save</button>
             <table class="exercise-table" id="exerciseTable">
                 <thead>
                     <tr>
@@ -89,7 +99,7 @@
                 <tbody>
                     
                     <tr>
-                        <td>1
+                        <td>
                             <input type="text" class="input-field" placeholder="Exercise">
                         </td>
                         <td>

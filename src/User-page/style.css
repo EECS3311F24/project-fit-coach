@@ -11,6 +11,134 @@
     border: 1px solid #eeee;
 }
 
+.save-btn {
+    margin-bottom: 10px;
+    background-color: #868686;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.save-btn:hover {
+    background-color: #4a4a4a;
+}
+
+.save-btn:active {
+    background-color: #2f2f2f;
+}
+
+#savedWorkoutsContainer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#savedWorkoutsContainer h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#workoutsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#workoutsList li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.workout-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center the elements horizontally */
+    margin-top: 20px; /* Adjust spacing from other sections */
+    padding: 10px;
+    width: 100%; /* Ensure it spans the available space */
+}
+
+.save-btn {
+    margin-bottom: 10px; /* Space below the button */
+    background-color: #496ea097;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: auto; /* Adjust width as needed */
+}
+
+#savedWorkoutsContainer {
+    margin-top: 20px; /* Space between button and container */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 80%; /* Match the container width with the button */
+    max-width: 600px; /* Optional: cap the maximum width */
+}
+
+#savedWorkoutsContainer h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center; /* Center align the heading */
+}
+
+#workoutsList {
+    list-style-type: none;
+    padding: 0;
+}
+.workout-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center the elements horizontally */
+    margin-top: 20px; /* Adjust spacing from other sections */
+    padding: 10px;
+    width: 100%; /* Ensure it spans the available space */
+}
+
+.save-btn {
+    margin-bottom: 10px; /* Space below the button */
+    background-color: #496ea097;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: auto; /* Adjust width as needed */
+}
+
+#savedWorkoutsContainer {
+    margin-top: 20px; /* Space between button and container */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 80%; /* Match the container width with the button */
+    max-width: 600px; /* Optional: cap the maximum width */
+}
+
+#savedWorkoutsContainer h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center; /* Center align the heading */
+}
+
+#workoutsList {
+    list-style-type: none;
+    padding: 0;
+}
 
 .sidebar{
     position: fixed;
@@ -513,15 +641,6 @@ color: #fff;
     border-color: #496ea0;
 }
 
-
-#nextBtn{
-
-
-}
-
-
-#prevBtn{
-}
 
 /* ---------- Workout Table implementation ---------- */
 .exercise-table {
