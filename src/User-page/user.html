@@ -27,7 +27,7 @@
 
         <div class="calendar-container">
             <!-- ------------------------------------------------------------- -->
-            <!-- Calendar -->
+                                        <!-- Calendar -->
             <!-- ------------------------------------------------------------- -->
 
             <div class="calender">
@@ -52,7 +52,9 @@
                 </div>
                 <div class="dates" id="dates"></div>
             </div>
-
+            <!-- ------------------------------------------------------------- -->
+                                        <!-- Inputs -->
+            <!-- ------------------------------------------------------------- -->
             <div class="input-fields">
                 <label for="weight">Weight:</label>
                 <div class="weight-input-container">
@@ -105,16 +107,13 @@
                 <button class="btn-calculate" onclick="calculateCalories()">Calculate Calories</button>
                 <div id="calorie-result" style="margin-top: 15px; font-weight: bold;"></div>
 
-
             </div>
             
-            
-            
         </div>
-
+        <button id="workout-btn" class="save-btn" onclick="openFn()">Log New Workout</button>
         <!-- Workout Section -->
         <div class="workout-section">
-            <button id="workout-btn" class="save-btn" onclick="openFn()">Log New Workout</button>
+            
             <div id="savedWorkoutsContainer">
                 <h2>Saved Workouts</h2>
                 <ul id="workoutsList">
@@ -162,7 +161,7 @@
             
             <button class="add-row-btn" onclick="addExerciseRow()">Add Exercise Row</button>
             <button class="close-btn" onclick="openFn()">×</button>
-          </div>
+        </div>
     </div>
 
     <div class="sidebar">

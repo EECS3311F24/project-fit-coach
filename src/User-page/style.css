@@ -60,33 +60,6 @@
     width: 100%; /* Ensure it spans the available space */
 }
 
-.save-btn {
-    margin-bottom: 10px; /* Space below the button */
-    background-color: #496ea097;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: auto; /* Adjust width as needed */
-}
-
-#savedWorkoutsContainer {
-    margin-top: 20px; /* Space between button and container */
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 80%; /* Match the container width with the button */
-    max-width: 600px; /* Optional: cap the maximum width */
-}
-
-#savedWorkoutsContainer h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-align: center; /* Center align the heading */
-}
 
 .workout-section {
     display: flex;
@@ -102,6 +75,7 @@
     background-color: #496ea097;
     color: white;
     padding: 10px 20px;
+    position:fixed;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -110,13 +84,15 @@
 }
 
 #savedWorkoutsContainer {
-    margin-top: 20px; /* Space between button and container */
+    margin-top: 50px; /* Space between button and container */
+    /* z-index: 15px; */
+    margin-right: 1100px;
     padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: 80%; /* Match the container width with the button */
-    max-width: 600px; /* Optional: cap the maximum width */
+    width: 50%; /* Match the container width with the button */
+    max-width: 250px; /* Optional: cap the maximum width */
 }
 
 #savedWorkoutsContainer h2 {
@@ -497,7 +473,6 @@ color: #fff;
 
 /* ---------- Log workout ---------- */
 #workout-btn{
-
     position: absolute;
     background-color: #496ea097;
     color: white;
