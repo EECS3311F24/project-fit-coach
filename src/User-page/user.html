@@ -14,8 +14,6 @@
 </head>
 <body>
 
-
-
     <div class="header">
         <header>
             <span><h1>Fit Coach</h1></span>
@@ -24,7 +22,14 @@
     </div>
 
     <div class="main-content">
+        
+        
+
         <div class="calendar-container">
+            <!-- ------------------------------------------------------------- -->
+            <!-- Calendar -->
+            <!-- ------------------------------------------------------------- -->
+
             <div class="calender">
                 <div class="head">
                     <button id="prevBtn">
@@ -37,13 +42,13 @@
                     </button>
                 </div>
                 <div class="days">
+                    <div class="day">Sun</div>
                     <div class="day">Mon</div>
                     <div class="day">Tue</div>
                     <div class="day">Wed</div>
                     <div class="day">Thu</div>
                     <div class="day">Fri</div>
                     <div class="day">Sat</div>
-                    <div class="day">Sun</div>
                 </div>
                 <div class="dates" id="dates"></div>
             </div>
@@ -107,11 +112,21 @@
             
         </div>
 
-        <button id="workout-btn" onclick="openFn()">Log new Workout</button>
+        <!-- Workout Section -->
+        <div class="workout-section">
+            <button id="workout-btn" class="save-btn" onclick="openFn()">Log New Workout</button>
+            <div id="savedWorkoutsContainer">
+                <h2>Saved Workouts</h2>
+                <ul id="workoutsList">
+                    <!-- Saved workouts will appear here -->
+                </ul>
+            </div>
+        </div>
 
         <div id="overlay"></div>
           <div id="popupDialog">
             <h1>Log here your workout</h1>
+            <button class="save-btn" onclick="saveWorkout()">Save</button>
             <table class="exercise-table" id="exerciseTable">
                 <thead>
                     <tr>
@@ -123,7 +138,7 @@
                 <tbody>
                     
                     <tr>
-                        <td>1
+                        <td>
                             <input type="text" class="input-field" placeholder="Exercise">
                         </td>
                         <td>
@@ -148,9 +163,6 @@
             <button class="add-row-btn" onclick="addExerciseRow()">Add Exercise Row</button>
             <button class="close-btn" onclick="openFn()">×</button>
           </div>
-          
-
-        
     </div>
 
     <div class="sidebar">
