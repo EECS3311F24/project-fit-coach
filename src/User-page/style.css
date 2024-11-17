@@ -11,37 +11,6 @@
     border: 1px solid #eeee;
 }
 
-.save-btn {
-    margin-bottom: 10px;
-    background-color: #868686;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.save-btn:hover {
-    background-color: #4a4a4a;
-}
-
-.save-btn:active {
-    background-color: #2f2f2f;
-}
-
-#savedWorkoutsContainer {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#savedWorkoutsContainer h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
 
 #workoutsList {
     list-style-type: none;
@@ -94,10 +63,6 @@
     text-align: center; /* Center align the heading */
 }
 
-#workoutsList {
-    list-style-type: none;
-    padding: 0;
-}
 .workout-section {
     display: flex;
     flex-direction: column; /* Stack elements vertically */
@@ -135,10 +100,6 @@
     text-align: center; /* Center align the heading */
 }
 
-#workoutsList {
-    list-style-type: none;
-    padding: 0;
-}
 
 .sidebar{
     position: fixed;
