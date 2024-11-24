@@ -5,6 +5,31 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.btn-calculate {
+    background-color: #393e9d; /* A nice green color */
+    color: white; /* White text for contrast */
+    font-size: 16px; /* Slightly larger text */
+    font-weight: bold; /* Make the text bold */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 20px; /* Add padding for a comfortable size */
+    cursor: pointer; /* Change the cursor to indicate clickability */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.btn-calculate:hover {
+    background-color: #13137b; /* Darker green on hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
+    transform: translateY(-2px); /* Lift the button slightly */
+}
+
+.btn-calculate:active {
+    background-color: #00337b; /* Even darker green when active */
+    transform: translateY(1px); /* Pressed effect */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15); /* Reduced shadow */
+}
+
 /* ---------- Side header ---------- */
 .user-img{
     width: 50px;
@@ -12,11 +37,76 @@
 }
 
 
+#workoutsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#workoutsList li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.workout-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center the elements horizontally */
+    margin-top: 20px; /* Adjust spacing from other sections */
+    padding: 10px;
+    width: 100%; /* Ensure it spans the available space */
+}
+
+
+.workout-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center the elements horizontally */
+    margin-top: 20px; /* Adjust spacing from other sections */
+    padding: 10px;
+    width: 100%; /* Ensure it spans the available space */
+}
+
+.save-btn {
+    margin-bottom: 10px; /* Space below the button */
+    background-color: #496ea097;
+    color: white;
+    padding: 10px 20px;
+    position:fixed;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: auto; /* Adjust width as needed */
+}
+
+#savedWorkoutsContainer {
+    margin-top: 50px; /* Space between button and container */
+    /* z-index: 15px; */
+    margin-right: 1100px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 50%; /* Match the container width with the button */
+    max-width: 250px; /* Optional: cap the maximum width */
+}
+
+#savedWorkoutsContainer h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center; /* Center align the heading */
+}
+
+
 .sidebar{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 200vh;
     width: 80px;
     background-color: #12171e;
     padding: 0.4rem 0.8rem;
@@ -38,7 +128,7 @@
 
 
 .sidebar #btn{
-    position: absolute;
+    position: relative;
     color: #fff;
     top: 0.4rem;
     left: 50%;
@@ -131,7 +221,7 @@
 }
 
 .sidebar ul li .tooltip{
-    position: absolute;
+    position: relative;
     left: 125px;
     top: 50%;
     transform: translate(-50%,-50%);
@@ -221,20 +311,30 @@
     
   }*/
 
+  .body{
+
+position: relative;
+
+
+
+
+  }
+
 .calender {
-	width: 380 px;
-	height: auto;
+	width: 380px;
+	height: 400px;
 	display: flex;
 	flex-direction: column;
-	padding: 5px;
+	padding: 10px;
 	background: #496ea097;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0,0,0,0.3);
     align-self: flex-start;
    /*float: left;*/
-    margin-top: 10%;
+    top: 100px;
+    bottom: 200px;
     margin-left: 20%;
-   transform: scale(1.5, 1.5);
+   transform: scale(1, 1);
 
  
 }
@@ -258,8 +358,8 @@ border: none;
 border-radius: 50%;
 background: #a9cd24;
 cursor: pointer;
-width: 40px;
-height: 40px;
+width: 30px;
+height: 30px;
 box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 
 
@@ -341,20 +441,20 @@ color: #fff;
 
 
 }
-    .input-fields {
+
+.input-fields {
+    position: absolute;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 10px;
-    background-color: #f4f4f463;
+    background-color: #496fa0;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    width: 180px;
+    width: 290px;
     transform: scale(1.5,1.5);
-    /*margin: auto;
-    margin-top: 10%;*/
-    margin-top: 10%;
-    margin-left: 20%;
+   top: 150px;
+   right: 300px;
     
     
 }
@@ -369,4 +469,198 @@ color: #fff;
     border-radius: 4px;
     border: 1px solid #dddddd59;
     font-size: 1rem;
+}
+
+/* ---------- Log workout ---------- */
+#workout-btn{
+    position: absolute;
+    background-color: #496ea097;
+    color: white;
+    bottom: 150px;
+    left: 300px;
+    width: 350px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+}
+
+#overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#popupDialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 90vw;
+    height: 90vh;
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+}
+
+#popupDialog.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+}
+
+.weight-input-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.weight-input-container input[type="number"] {
+    flex: 1;
+}
+
+.weight-input-container select {
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #dddddd59;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s ease;
+    width: 60px;
+}
+
+.weight-input-container select:focus {
+    outline: none;
+    border-color: #496ea0;
+}
+
+.exercise-frequency-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.exercise-frequency-container select{
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #dddddd59;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.height-input-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.height-input-container input[type="number"] {
+    flex: 1;
+}
+
+.height-input-container select {
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #dddddd59;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s ease;
+    width: 60px;
+}
+
+.height-input-container select:focus {
+    outline: none;
+    border-color: #496ea0;
+}
+
+.gender-container label {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ---------- Workout Table implementation ---------- */
+.exercise-table {
+width: 80%;
+border-collapse: collapse;
+}
+.exercise-table th, .exercise-table td {
+padding: 10px;
+border: 0px solid #ddd;
+text-align: center;
+vertical-align: top;
+}
+.exercise-table th {
+background-color: #f2f2f2;
+}
+.input-group {
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+.input-field {
+width: 90%;
+padding: 5px;
+
+}
+.add-row-btn {
+margin: 10px 0;
+border-radius: 12%;
+padding: 10px 15px;
+font-size: 16px;
+cursor: pointer;
+background-color: black;
+color: white;
+
+}
+#exercise-table-header{
+    background-color: black;
 }
