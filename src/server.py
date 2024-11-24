@@ -47,9 +47,11 @@ def register():
         """, (first_name, last_name, email, password))
         conn.commit()
         conn.close()
-        return "Registration Successful!"
+        message = "Registration Successful!"
     except sqlite3.IntegrityError:
-        return "Email already exists. Registration failed."
+        message = "Email already exists. Registration failed."
+
+    return render_template("index.html", message=message)
 
 if __name__ == "__main__":
     app.run(debug=True)

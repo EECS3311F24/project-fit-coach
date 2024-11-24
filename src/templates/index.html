@@ -17,10 +17,15 @@
 
                 <!-- Logo Image -->
                 <img src="static/images/Fit Coach Logo.jpeg" alt="Fit Coach Logo" class="logo">
-                
+                {% if message %}
+                <div class="alert">
+                    <p>{{ message }}</p>
+                </div>
+                {% endif %}
+
 
                 <!-- Register division -->
-                <div class="container" id="signup" >
+                <div class="container" id="signup" style="display: none;">
                     <h1 class="form-title">Register</h1>
                     <form method="post" action="/submit">
                         <div class="input-group">
@@ -57,9 +62,9 @@
                 </div>
 
                 <!-- Login division -->
-                <div class="container" id="signIn" style="display: none;">
+                <div class="container" id="signIn">
                     <h1 class="form-title">Sign In</h1>
-                    <form id="loginForm" method="post" action="/login">
+                    <form id="loginForm" method="post" action="">
                         <div class="input-group">
                             <i class="fas fa-envelope"></i>
                             <input type="text" name="email" id="email2" placeholder="Email" required>
