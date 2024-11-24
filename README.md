@@ -22,7 +22,21 @@ NOTE: to view the video as an mp4 file, it should be downloaded
 - As a user, I want to be able to record my calories to see how much I have eaten.
 
 ## Installation
-At the current time, the only way to access our webpage is by running the index.html under the Main-page, and user.html under the User-page.
+Install the library 
+### Install Flask
+using the command line/terminal do the following command:
+```
+pip install flask
+```
+
+### Run the Flask Application
+Start the Flask server:
+```
+python app.py
+```
+
+### Open Localhost to view the page
+Go to any browser and visit this link (http://127.0.0.1:5000/)
 
 ## Contribution
 
