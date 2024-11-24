@@ -1,12 +1,14 @@
 # Project Fit Coach
 
 ## Motivation
-In today's fitness-driven world, a platform that tracks nutrition and workout progress is critical for fitness enthusiasts. Many existing solutions lack either advanced workout tracking or comprehensive nutrition logging, limiting their usefulness for serious athletes and fitness coaches. Our app is designed to fill this gap, providing bodybuilders, powerlifters, CrossFitters, beginners, and fitness coaches with a versatile tool that integrates detailed nutrition tracking, progressive overload systems, and customizable workout plans. This website aims to help users achieve their fitness goals more efficiently by offering precise tracking, personalized workout routines, and nutrition suggestions. 
+In today's fitness-driven world, a platform that tracks nutrition and workout progress is critical for fitness enthusiasts. Many existing solutions lack either advanced workout tracking or comprehensive nutrition logging, limiting their usefulness for serious athletes. Our app is designed to fill this gap, providing bodybuilders, powerlifters, CrossFitters, and beginners with a versatile tool that integrates detailed nutrition tracking, progressive overload systems, and customizable workout plans. This website aims to help users achieve their fitness goals more efficiently by offering precise tracking, personalized workout routines, and nutrition suggestions. 
 
 It's a one-stop solution for improving health, fitness, and overall performance.
 
 ## Demo Video
 The Demo video for sprint1: [video](doc/Sprint1/sprint1demo.mp4) or [youtube link](https://www.youtube.com/watch?v=T9BlZoKfMPM)
+
+The Demo video for sprint2: [video](doc/Sprint2/sprint2demo.mp4)
 
 NOTE: to view the video as an mp4 file, it should be downloaded
 
@@ -14,6 +16,10 @@ NOTE: to view the video as an mp4 file, it should be downloaded
 - Main page which contains some information about our project and a button to the login page.
 - Login page which allows the users to log in if they have an existing account or register if they're new to the website.
 - Ability for each user to view a customized calendar as well as input for weight and height.
+- As a user, I want to be able to use the appropriate system to record weight whether in pounds, kilograms or stones.
+- As a user, if I identify as a beginner I want to have a beginner plan to help me get started.
+- As a user, I want to be able to create workout routines that I can access later on.
+- As a user, I want to be able to record my calories to see how much I have eaten.
 
 ## Installation
 At the current time, the only way to access our webpage is by running the index.html under the Main-page, and user.html under the User-page.
