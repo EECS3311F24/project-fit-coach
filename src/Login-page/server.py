@@ -1,28 +1,27 @@
-from flask import Flask, request, redirect, send_from_directory, url_for
-import sqlite3
-import hashlib
-import os
+from flask import Flask, request, render_template, redirect, url_for
 
 app = Flask(__name__)
 
-@app.route('/login', methods=['POST'])
-def login():
-    username = request.form['email']
-    password = request.form['password']
-    hashed_password = hashlib.sha256(password.encode()).hexdigest()
 
-    conn = sqlite3.connect("userdata.db")
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM userdata WHERE username = ? AND password = ?", (username, hashed_password))
-    user = cur.fetchone()
-    conn.close()
-
-    if user:
-        return redirect(url_for('static', filename='main.html'))
-    else:
-        return "Login failed!", 401
+@app.route("/")
+def home():
+    return render_template("index.html")
 
 
+@app.route("/submit", methods=["POST"])
+def register():
+    # Get form data
+    first_name = request.form.get("fName")
+    last_name = request.form.get("lName")
+    email = request.form.get("email")
+    password = request.form.get("password")
 
-if __name__ == '__main__':
+    # Save data to a text file
+    with open("login_info.txt", "a") as file:
+        file.write(f"First Name: {first_name}, Last Name: {last_name}, Email: {email}, Password: {password}\n")
+
+    return "Registration Successful!"
+
+
+if __name__ == "__main__":
     app.run(debug=True)

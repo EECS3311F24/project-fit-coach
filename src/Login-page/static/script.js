@@ -12,3 +12,5 @@ signInButton.addEventListener('click', function(){
     signUpForm.style.display="none";
 })
 
+const forms = document.querySelectorAll("form");
+forms.forEach(form => form.reset());
