@@ -664,3 +664,19 @@ color: white;
 #exercise-table-header{
     background-color: black;
 }
+
+.macro-field{
+    display: flex;
+    justify-content: center;
+}
+
+.macro-input-field{
+    width: 80px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 5px;
+}
+.macro-input-field::placeholder{
+    font-size: 15px;
+}

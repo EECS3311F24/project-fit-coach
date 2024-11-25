@@ -260,4 +260,55 @@ function calculateCalories() {
     // alert(`Based on your inputs, your estimated daily calorie needs are ${TDEE} calories.`);
     resultContainer.textContent = `Your estimated daily calorie needs are: ${TDEE} calories.`;
     // resultContainer.style.color = "green";
+
+    //fetch user choice of macros to calculate macros to be eaten
+    const proteininput = document.getElementById("Protein").value;
+    const carbsinput = document.getElementById("Carbs").value;
+    const fatinput = document.getElementById("Fat").value;
+
+    
+
+
+    if( (proteininput + carbsinput + fatinput) != 100){
+        alert("Please ensure that the sum of your macros is 100%");
+    }
+
+    const proteinoutput = (TDEE * (parseFloat(proteininput) / 100)) / 4; 
+    const carbsoutput = (TDEE * (parseFloat(carbsinput) / 100)) / 4;
+    const fatoutput = (TDEE * (parseFloat(fatinput) / 100)) / 9;
+
+
+    const xValues = ["Protein", "Carbs", "Fat"];
+    const yValues = [proteinoutput,carbsoutput,fatoutput];
+
+    const barColors = [
+    "#b91d47",
+    "#00aba9",
+    "#2b5797"
+    ];
+
+    new Chart("myChart", {
+    type: "doughnut",
+    data: {
+        labels: xValues,
+        datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+        }]
+    },
+    options: {
+        title: {
+        display: true,
+        text: "Your Macros for the day!",
+        fontColor: "black",
+        },
+        legend: {
+            labels: {
+                fontcolor: "black",
+            }
+        },
+    }
+    });
+
 }
+
