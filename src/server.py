@@ -53,5 +53,29 @@ def register():
 
     return render_template("index.html", message=message)
 
+@app.route("/login", methods=["POST"])
+def login():
+    email = request.form.get("email")
+    password = request.form.get("password")
+
+    # Check credentials in the database
+    conn = sqlite3.connect(DATABASE)
+    cursor = conn.cursor()
+    print(f"Email: {email}, Password: {password}")
+    cursor.execute("""
+            SELECT * FROM users WHERE email = ? AND password = ?
+        """, (email, password))
+    user = cursor.fetchone()
+    conn.close()
+    print(f"User fetched: {user}")
+
+    if user:
+        message = f"Welcome, {user[1]} {user[2]}!"
+        return render_template("user.html", message=message)
+    else:
+        message = "Invalid email or password. Please try again."
+        return render_template("index.html", message=message)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
