@@ -216,9 +216,7 @@ function saveWorkout() {
 
 
 
-
-
-
+let prevchart = null;
 
 function calculateCalories() {
 
@@ -263,18 +261,14 @@ function calculateCalories() {
     // Determine activity multiplier based on exercise frequency
     const activityMultipliers = [1, 1.05, 1.1, 1.15, 1.2, , 1.25, 1.3, 1.35];
     const activityFactor = activityMultipliers[exerciseFrequency];
-
     // Calculate TDEE (Total Daily Energy Expenditure)
     const TDEE = Math.round(BMR * activityFactor);
-
-    
     // alert(`Based on your inputs, your estimated daily calorie needs are ${TDEE} calories.`);
     // resultContainer.style.color = "green";
     if( proteininput + carbsinput + fatinput !== 100){
         alert("Please ensure that the sum of your macros is 100%");
 
-    }else{
-        
+    }else{       
        //total calorie consumption 
         const resultContainer = document.getElementById("calorie-result");
         resultContainer.textContent = `Your estimated daily calorie needs are: ${TDEE} calories.`;
@@ -291,18 +285,23 @@ function calculateCalories() {
 
 
 
-        
+         // update: bug fixed :) 
+         // now we ensure there is only one instance of a chart every time (⌐■_■)
+         if(prevchart  !== null ){
+             prevchart.destroy();
+         }
+
+
+
         //generation of the chart
         const xValues = ["Protein", "Carbs", "Fat"];
-        const yValues = [proteinoutput,carbsoutput,fatoutput];
-    
+        const yValues = [proteinoutput,carbsoutput,fatoutput];    
         const barColors = [
         "#b91d47",
         "#00aba9",
-        "#2b5797"
-        ];
+        "#2b5797"];
     
-        new Chart("myChart", {
+        prevchart = new Chart("myChart", {
         type: "doughnut",
         data: {
             labels: xValues,
