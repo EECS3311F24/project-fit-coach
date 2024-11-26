@@ -214,7 +214,15 @@ function saveWorkout() {
 
 
 
+
+
+
+
+
+
 function calculateCalories() {
+
+    
     // Fetch input values
     const weight = parseFloat(document.getElementById("weight").value);
     const weightUnit = document.getElementById("weight-unit").value;
@@ -223,9 +231,14 @@ function calculateCalories() {
     const age = parseInt(document.getElementById("age").value);
     const exerciseFrequency = parseInt(document.getElementById("exercise-frequency").value);
     const gender = document.querySelector('input[name="gender"]:checked')?.value;
+    //fetch user choice of macros to calculate macros to be eaten
+    const proteininput = parseInt(document.getElementById("Protein").value);
+    const carbsinput = parseInt(document.getElementById("Carbs").value);
+    const fatinput = parseInt(document.getElementById("Fat").value);
 
     // Ensure inputs are valid
-    if (!weight || !height || !age || !gender) {
+    if (!weight || !height || !age || !gender||
+        !proteininput || !carbsinput || !fatinput) {
         alert("Please fill in all fields!");
         return;
     }
@@ -254,61 +267,66 @@ function calculateCalories() {
     // Calculate TDEE (Total Daily Energy Expenditure)
     const TDEE = Math.round(BMR * activityFactor);
 
-    // Display result
-    const resultContainer = document.getElementById("calorie-result");
-
+    
     // alert(`Based on your inputs, your estimated daily calorie needs are ${TDEE} calories.`);
-    resultContainer.textContent = `Your estimated daily calorie needs are: ${TDEE} calories.`;
     // resultContainer.style.color = "green";
+    if( proteininput + carbsinput + fatinput !== 100){
+        alert("Please ensure that the sum of your macros is 100%");
 
-    //fetch user choice of macros to calculate macros to be eaten
-    const proteininput = document.getElementById("Protein").value;
-    const carbsinput = document.getElementById("Carbs").value;
-    const fatinput = document.getElementById("Fat").value;
+    }else{
+        
+       //total calorie consumption 
+        const resultContainer = document.getElementById("calorie-result");
+        resultContainer.textContent = `Your estimated daily calorie needs are: ${TDEE} calories.`;
+        //total macro consumption
+        const proteinoutput = (TDEE * (parseFloat(proteininput) / 100)) / 4; 
+        const carbsoutput = (TDEE * (parseFloat(carbsinput) / 100)) / 4;
+        const fatoutput = (TDEE * (parseFloat(fatinput) / 100)) / 9;
+    
+    
+        // disclaimer:
+        //When user successfully generates chart, if user proceeds to change macros to
+        // get different results, code will generate new table on top of previous, 
+        // creating two charts stacked on eachother
+
+
+
+        
+        //generation of the chart
+        const xValues = ["Protein", "Carbs", "Fat"];
+        const yValues = [proteinoutput,carbsoutput,fatoutput];
+    
+        const barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797"
+        ];
+    
+        new Chart("myChart", {
+        type: "doughnut",
+        data: {
+            labels: xValues,
+            datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+            }]
+        },
+        options: {
+            title: {
+            display: true,
+            text: "Your Macros for the day!",
+            fontColor: "black",
+            },
+            legend: {
+                labels: {
+                    fontColor: "black",
+                }
+            },
+        }
+        });
+    }
 
     
-
-
-    if( (proteininput + carbsinput + fatinput) != 100){
-        alert("Please ensure that the sum of your macros is 100%");
-    }
-
-    const proteinoutput = (TDEE * (parseFloat(proteininput) / 100)) / 4; 
-    const carbsoutput = (TDEE * (parseFloat(carbsinput) / 100)) / 4;
-    const fatoutput = (TDEE * (parseFloat(fatinput) / 100)) / 9;
-
-
-    const xValues = ["Protein", "Carbs", "Fat"];
-    const yValues = [proteinoutput,carbsoutput,fatoutput];
-
-    const barColors = [
-    "#b91d47",
-    "#00aba9",
-    "#2b5797"
-    ];
-
-    new Chart("myChart", {
-    type: "doughnut",
-    data: {
-        labels: xValues,
-        datasets: [{
-        backgroundColor: barColors,
-        data: yValues
-        }]
-    },
-    options: {
-        title: {
-        display: true,
-        text: "Your Macros for the day!",
-        fontColor: "black",
-        },
-        legend: {
-            labels: {
-                fontcolor: "black",
-            }
-        },
-    }
-    });
 
 }
 
