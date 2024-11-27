@@ -329,3 +329,130 @@ function calculateCalories() {
 
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const mainColorSelect = document.getElementById('main-color');
+    const secondaryColorSelect = document.getElementById('secondary-color');
+    const applyColorsButton = document.getElementById('apply-colors');
+    const sidebarItems = Array.from(document.querySelectorAll('.sidebar ul li a'));
+    const sidebarToggleButton = document.getElementById('btn');
+    const fitCoachText = document.querySelector('.logo span'); // Target Fit Coach text
+
+    // Helper function to determine appropriate text color
+    const getTextColor = (color) => {
+        if (color === '#FFFFFF' || color.toLowerCase() === 'white') {
+            return '#000000'; // Black text for white background
+        }
+        if (color === '#000000' || color.toLowerCase() === 'black') {
+            return '#FFFFFF'; // White text for black background
+        }
+        const rgb = color.startsWith('#') ? color.slice(1) : color;
+        const r = parseInt(rgb.substring(0, 2), 16);
+        const g = parseInt(rgb.substring(2, 4), 16);
+        const b = parseInt(rgb.substring(4, 6), 16);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        return brightness > 186 ? '#000000' : '#FFFFFF';
+    };
+
+    const updateFitCoachText = (textElement, mainColor, secondaryColor) => {
+        let textColor = getTextColor(mainColor); // Default text color based on main color
+
+        // Special exception: if main is white or both main and secondary are white
+        if (
+            (mainColor === '#FFFFFF' || mainColor.toLowerCase() === 'white') ||
+            ((mainColor === '#FFFFFF' || mainColor.toLowerCase() === 'white') &&
+                (secondaryColor === '#FFFFFF' || secondaryColor.toLowerCase() === 'white'))
+        ) {
+            textColor = '#000000'; // Force text to black
+        }
+
+        // Apply the determined text color
+        textElement.style.color = textColor;
+    };
+
+    const updateElementColors = (element, backgroundColor) => {
+        element.style.backgroundColor = backgroundColor;
+        element.style.color = getTextColor(backgroundColor);
+    };
+
+    const updateOptionColors = (selectElement, backgroundColor, textColor) => {
+        Array.from(selectElement.options).forEach((option) => {
+            option.style.backgroundColor = backgroundColor;
+            option.style.color = textColor;
+        });
+    };
+
+    const updateSidebarColors = (sidebarItems, backgroundColor, textColor) => {
+        sidebarItems.forEach((item) => {
+            item.style.backgroundColor = backgroundColor; // Update background color
+            item.style.color = textColor; // Update text color
+        });
+    };
+
+    const updateSidebarToggleButton = (button, backgroundColor, textColor) => {
+        button.style.backgroundColor = backgroundColor;
+        button.style.color = textColor;
+    };
+
+    const savedMainColor = localStorage.getItem('mainColor') || '#1a212b';
+    const savedSecondaryColor = localStorage.getItem('secondaryColor') || '#ffffff';
+    document.documentElement.style.setProperty('--main-color', savedMainColor);
+    document.documentElement.style.setProperty('--secondary-color', savedSecondaryColor);
+
+    mainColorSelect.value = savedMainColor;
+    secondaryColorSelect.value = savedSecondaryColor;
+
+    updateElementColors(mainColorSelect, savedMainColor);
+    updateOptionColors(mainColorSelect, savedMainColor, getTextColor(savedMainColor));
+    updateElementColors(secondaryColorSelect, savedSecondaryColor);
+    updateOptionColors(secondaryColorSelect, savedSecondaryColor, getTextColor(savedSecondaryColor));
+    updateElementColors(applyColorsButton, savedSecondaryColor);
+    updateSidebarColors(sidebarItems, savedSecondaryColor, getTextColor(savedSecondaryColor));
+    updateSidebarToggleButton(sidebarToggleButton, savedSecondaryColor, getTextColor(savedSecondaryColor));
+    updateFitCoachText(fitCoachText, savedMainColor, savedSecondaryColor); // Apply dynamic coloring
+
+    mainColorSelect.addEventListener('change', () => {
+        const mainColor = mainColorSelect.value;
+        const textColor = getTextColor(mainColor);
+        document.documentElement.style.setProperty('--main-color', mainColor);
+        updateElementColors(mainColorSelect, mainColor);
+        updateOptionColors(mainColorSelect, mainColor, textColor);
+    });
+
+    secondaryColorSelect.addEventListener('change', () => {
+        const secondaryColor = secondaryColorSelect.value;
+        const mainColor = mainColorSelect.value;
+        updateElementColors(secondaryColorSelect, secondaryColor);
+        updateOptionColors(secondaryColorSelect, secondaryColor, getTextColor(secondaryColor));
+        updateElementColors(applyColorsButton, secondaryColor);
+        updateSidebarColors(sidebarItems, secondaryColor, getTextColor(secondaryColor));
+        updateSidebarToggleButton(sidebarToggleButton, secondaryColor, getTextColor(secondaryColor));
+        updateFitCoachText(fitCoachText, mainColor, secondaryColor); // Update Fit Coach text dynamically
+    });
+
+    applyColorsButton.addEventListener('click', () => {
+        const mainColor = mainColorSelect.value;
+        const secondaryColor = secondaryColorSelect.value;
+
+        document.documentElement.style.setProperty('--main-color', mainColor);
+        document.documentElement.style.setProperty('--secondary-color', secondaryColor);
+
+        localStorage.setItem('mainColor', mainColor);
+        localStorage.setItem('secondaryColor', secondaryColor);
+
+        updateFitCoachText(fitCoachText, mainColor, secondaryColor); // Ensure Fit Coach text updates
+
+        alert('Colors updated successfully!');
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+

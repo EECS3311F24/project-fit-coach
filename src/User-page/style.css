@@ -1,3 +1,8 @@
+:root {
+    --main-color: #1a212b; /* Default main color */
+    --secondary-color: #ffffff; /* Default secondary color */
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,8 +11,8 @@
 }
 
 .btn-calculate {
-    background-color: #393e9d; /* A nice green color */
-    color: white; /* White text for contrast */
+    background-color: var(--secondary-color); /* Updated */
+    color: var(--main-color); /* Updated */
     font-size: 16px; /* Slightly larger text */
     font-weight: bold; /* Make the text bold */
     border: none; /* Remove default border */
@@ -108,7 +113,7 @@
     left: 0;
     height: 200vh;
     width: 80px;
-    background-color: #12171e;
+    background-color: var(--main-color); /* Updated */
     padding: 0.4rem 0.8rem;
     transition: all 0.5s ease;
     z-index: 10;
@@ -127,16 +132,37 @@
 
 
 
-.sidebar #btn{
-    position: relative;
-    color: #fff;
-    top: 0.4rem;
-    left: 50%;
-    font-size: 1.2rem;
-    line-height: 50px;
-    transform: translateX(-50%);
-    cursor: pointer;
+.sidebar #btn {
+    background-color: var(--secondary-color); /* Match secondary color */
+    color: var(--main-color); /* Match main color for text */
+    border: none; /* Remove any border */
+    border-radius: 8px; /* Add rounded corners */
+    font-size: 24px; /* Adjust font size of the dashes */
+    width: 40px; /* Adjust width of the box */
+    height: 40px; /* Adjust height of the box */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center align vertically */
+    justify-content: center; /* Center align horizontally */
+    line-height: 0; /* Prevent extra line height from affecting alignment */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    cursor: pointer; /* Maintain pointer cursor */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+
+.sidebar #btn:hover {
+    background-color: var(--main-color); /* Change background color on hover */
+    color: var(--secondary-color); /* Change text color on hover */
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+.sidebar #btn i {
+    display: inline-block; /* Ensure the icon behaves like an inline block */
+    margin: 0; /* Remove any margin around the icon */
+    padding: 0; /* Remove any padding inside the icon */
+}
+
 
 .sidebar.active #btn{
     left: 90%
@@ -192,17 +218,17 @@
     margin: 0.8rem auto;
     line-height: 50px;
 }
-.sidebar ul li a{
-    color: #fff;
+.sidebar ul li a {
+    color: var(--secondary-color); /* Updated */
     display: flex;
     align-items: center;
     text-decoration: none;
     border-radius: 0.8rem;
 }
 
-.sidebar ul li a:hover{
-    background-color: #fff;
-    color: #12171e;
+.sidebar ul li a:hover {
+    background-color: var(--secondary-color); /* Updated */
+    color: var(--main-color); /* Updated */
 }
 
 .sidebar ul li a i{
@@ -243,7 +269,8 @@
 
 .header{
     position: fixed;
-    background-color: #1a212b;
+    background-color: var(--main-color); /* Updated */
+    color: var(--secondary-color); /* Updated */
     top: 0;
     left: 80px; /* Initial position when sidebar is collapsed */
     width: calc(100% - 80px); /* Adjusts to sidebar width */
@@ -290,7 +317,7 @@
 
 .main-content{
     position: relative;
-    background-color: #1d2229;
+    background-color: var(--main-color); /* Updated */
     min-height: 100vh;
     top: 0;
     left: 80px;
@@ -679,4 +706,61 @@ color: white;
 }
 .macro-input-field::placeholder{
     font-size: 15px;
+}
+
+/* for page customazition */
+.color-customization {
+    display: flex;
+    align-items: center; /* Vertically aligns items with the profile icon */
+    gap: 15px; /* Adds spacing between dropdowns and button */
+    position: absolute;
+    top: 50%; /* Vertically centers the buttons within the header */
+    right: 90px; /* Adjusts distance from the profile icon */
+    transform: translateY(-50%); /* Fixes vertical alignment */
+}
+
+.color-customization select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: inherit; /* Allow JavaScript to control text color */
+    cursor: pointer;
+    appearance: none; /* Remove default browser styles */
+}
+
+.color-customization select option {
+    color: #000000; /* Text inside options is black for visibility */
+}
+
+.color-customization button {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.color-customization button:hover {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+}
+
+/* Style the dropdown options */
+.color-customization select option {
+    background-color: #000000; /* Default background for options (black) */
+    color: #FFFFFF; /* Default text color for options (white) */
+}
+
+/* Ensure options reflect the selected dropdown background and text color */
+.color-customization select {
+    background-color: inherit; /* Matches the select's background */
+    color: inherit; /* Matches the select's text color */
+}
+
+/* Adjust hover behavior for better visibility */
+.color-customization select option:hover {
+    background-color: var(--secondary-color); /* Use secondary color for hover */
+    color: var(--main-color); /* Use main color for hover text */
 }
