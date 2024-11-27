@@ -661,6 +661,12 @@ background-color: black;
 color: white;
 
 }
-#exercise-table-header{
+#exercise-table-header1{
+    background-color: black;
+}
+#exercise-table-header2{
+    background-color: black;
+}
+#exercise-table-header3{
     background-color: black;
 }

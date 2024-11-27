@@ -92,7 +92,7 @@
                     </select>
                 </div>
 
-                <label for="gender">Gender:</label>
+                <label>Gender:</label>
                 <div class="gender-container">
                     <label>
                         <input type="radio" id="male" name="gender" value="male">
@@ -123,20 +123,23 @@
         </div>
 
         <div id="overlay"></div>
-          <div id="popupDialog">
+        <div id="popupDialog">
             <h1>Log here your workout</h1>
+            <form action="/save" method="POST">
+
+            </form>
             <button class="save-btn" onclick="saveWorkout()">Save</button>
-            <form action="/submit" method="POST">
+
+
             <table class="exercise-table" id="exerciseTable">
                 <thead>
-                    <tr>
-                        <th id="exercise-table-header">Exercise</th>
-                        <th id="exercise-table-header">Reps</th>
-                        <th id="exercise-table-header">Weight</th>
-                    </tr>
+                <tr>
+                    <th id="exercise-table-header1">Exercise</th>
+                    <th id="exercise-table-header2">Reps</th>
+                    <th id="exercise-table-header3">Weight</th>
+                </tr>
                 </thead>
                 <tbody>
-                    
                     <tr>
                         <td>
                             <input type="text" class="input-field" placeholder="Exercise">
@@ -159,7 +162,7 @@
                     </tr>
                 </tbody>
             </table>
-            
+
             <button class="add-row-btn" onclick="addExerciseRow()">Add Exercise Row</button>
             <button class="close-btn" onclick="openFn()">×</button>
         </div>

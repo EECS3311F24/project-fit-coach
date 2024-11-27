@@ -29,11 +29,11 @@ def workout_database():
     conn = sqlite3.connect(DATABASEWORKOUT)
     cursor = conn.cursor()
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS users (
+        CREATE TABLE IF NOT EXISTS workouts (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             exercise TEXT NOT NULL,
-            weight REAL NOT NULL UNIQUE,
-            reps INTEGER NOT NULL,
+            weight FLOAT NOT NULL UNIQUE,
+            reps INTEGER NOT NULL
         )
     """)
     conn.commit()
@@ -85,13 +85,11 @@ def login():
     # Check credentials in the database
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
-    print(f"Email: {email}, Password: {password}")
     cursor.execute("""
             SELECT * FROM users WHERE email = ? AND password = ?
         """, (email, password))
     user = cursor.fetchone()
     conn.close()
-    print(f"User fetched: {user}")
 
     if user:
         message = f"Welcome, {user[1]} {user[2]}!"
@@ -100,19 +98,20 @@ def login():
         message = "Invalid email or password. Please try again."
         return render_template("index.html", message=message)
 
-@app.route("/submit", methods=["POST"])
+@app.route("/save", methods=["POST"])
 def workout():
     # Get form data
     exercise = request.form.get("exercise")
     weight = request.form.get("weight")
     reps = request.form.get("reps")
 
+    print(f"Exercise: {exercise}, Weight: {weight}, Reps: {reps}")
+
     try:
-        
         # Convert weight and reps to appropriate types
         weight = float(weight)
         reps = int(reps)
-        
+
         # Insert data into the database
         conn = sqlite3.connect(DATABASEWORKOUT)
         cursor = conn.cursor()
@@ -130,6 +129,5 @@ def workout():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    # app2.run(debug=True)
     
 
