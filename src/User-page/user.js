@@ -259,7 +259,7 @@ function calculateCalories() {
     }
 
     // Determine activity multiplier based on exercise frequency
-    const activityMultipliers = [1, 1.05, 1.1, 1.15, 1.2, , 1.25, 1.3, 1.35];
+    const activityMultipliers = [1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35];
     const activityFactor = activityMultipliers[exerciseFrequency];
     // Calculate TDEE (Total Daily Energy Expenditure)
     const TDEE = Math.round(BMR * activityFactor);
