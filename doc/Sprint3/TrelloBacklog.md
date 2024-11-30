@@ -13,9 +13,9 @@
 ### User Story
 2. As a user, I want to be able to record my calories and macronutrients the application has calculated for me personally to see how much I have eaten and how much I have left to eat [8 points] (Priority: High)
 ### Acceptance Criteria
-    - The user can input how much calories and each macronutrient they consumed
-    - The system checks if the field is inputted in correctly and validates the user if needed
-    - The system will keep track of the information and add it to each necessary  counter for that day for display  
+    - The user can input how much calories and how much of each macronutrient they consumed
+    - The system checks if the field is inputted correctly and validates the user if needed
+    - The system will keep track of the information and add it to each necessary counter for that day for display  
     - The system stores this data in the database
     - The system will then display the differences of how much of each macronutrient and calories the user needs to consume per day to the current four total counters of that particular day
     - The system will display the percentage of the 3 macronutrients consumed in a percentage pie graph
@@ -30,17 +30,27 @@
 3. As a user, I want to be able to have access to preset workout routines without having to create my own [6 points] (Priority: High)
 ### Acceptance Criteria
     - The user can click a button with a workout day name and a preset workout plan will be displayed for the user to use 
-    - The system will display this in a user friendly way that is easy to use and very appealing to the user
+    - The system will display this in a user-friendly way that is easy to use and very appealing to the user
 ### Tasks
     - Have buttons with preset workout plans for each workout day 
     - If the user clicks on one of them then the system adds it to the workout routines for the user to use
 ---
 ## Feature 4
 ### User Story
-4. As a user, I want to be able to customize my page with different colours so I can enjoy the looks of the application [12 points] (Priority: Low)
+4. As a user, I want my login or register information to be saved in a database so I can sign in faster [10 points] (Priority: Medium)
 ### Acceptance Criteria
-    - The user can click a button, the user will then be able to choose what colour they want their page to be in
-    - The system will change the colour of the page to be that colour the user wanted
+    - The user can log into their account or register a new account
+    - The system will then save this login/register information and store it in the database for the user to be able to sign in later
+### Tasks
+    - Allow the user to sign into their account or be able to create a new account
+    - Save the user's login/register information in a database to allow the user to log into their account later
+---
+## Feature 5
+### User Story
+5. As a user, I want to be able to customize my page with different colours so I can enjoy the looks of the application [12 points] (Priority: Low)
+### Acceptance Criteria
+    - The user can click a button and then the user will be able to choose what colour they want their page to be in
+    - The system will change the colour of the page to be the colour the user wanted
 ### Tasks
     - Have a button for the user to be able to change the colour of the page
     - Be able to customize the page with different colours with preset templates with different colours
