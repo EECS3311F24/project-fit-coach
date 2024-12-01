@@ -214,7 +214,13 @@ function saveWorkout() {
 
 
 
+
+
+let prevchart = null;
+
 function calculateCalories() {
+
+
     // Fetch input values
     const weight = parseFloat(document.getElementById("weight").value);
     const weightUnit = document.getElementById("weight-unit").value;
@@ -223,9 +229,14 @@ function calculateCalories() {
     const age = parseInt(document.getElementById("age").value);
     const exerciseFrequency = parseInt(document.getElementById("exercise-frequency").value);
     const gender = document.querySelector('input[name="gender"]:checked')?.value;
+    //fetch user choice of macros to calculate macros to be eaten
+    const proteininput = parseInt(document.getElementById("Protein").value);
+    const carbsinput = parseInt(document.getElementById("Carbs").value);
+    const fatinput = parseInt(document.getElementById("Fat").value);
 
     // Ensure inputs are valid
-    if (!weight || !height || !age || !gender) {
+    if (!weight || !height || !age || !gender||
+        !proteininput || !carbsinput || !fatinput) {
         alert("Please fill in all fields!");
         return;
     }
@@ -248,16 +259,188 @@ function calculateCalories() {
     }
 
     // Determine activity multiplier based on exercise frequency
-    const activityMultipliers = [1, 1.05, 1.1, 1.15, 1.2, , 1.25, 1.3, 1.35];
+    const activityMultipliers = [1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35];
     const activityFactor = activityMultipliers[exerciseFrequency];
-
     // Calculate TDEE (Total Daily Energy Expenditure)
     const TDEE = Math.round(BMR * activityFactor);
-
-    // Display result
-    const resultContainer = document.getElementById("calorie-result");
-
     // alert(`Based on your inputs, your estimated daily calorie needs are ${TDEE} calories.`);
-    resultContainer.textContent = `Your estimated daily calorie needs are: ${TDEE} calories.`;
     // resultContainer.style.color = "green";
+    if( proteininput + carbsinput + fatinput !== 100){
+        alert("Please ensure that the sum of your macros is 100%");
+
+    }else{
+       //total calorie consumption
+        const resultContainer = document.getElementById("calorie-result");
+        resultContainer.textContent = `Your estimated daily calorie needs are: ${TDEE} calories.`;
+        //total macro consumption
+        const proteinoutput = Math.round((TDEE * (parseFloat(proteininput) / 100)) / 4);
+        const carbsoutput = Math.round((TDEE * (parseFloat(carbsinput) / 100)) / 4);
+        const fatoutput = Math.round((TDEE * (parseFloat(fatinput) / 100)) / 9);
+
+
+        // disclaimer:
+        //When user successfully generates chart, if user proceeds to change macros to
+        // get different results, code will generate new table on top of previous,
+        // creating two charts stacked on eachother
+
+
+
+         // update: bug fixed :)
+         // now we ensure there is only one instance of a chart every time (⌐■_■)
+         if(prevchart  !== null ){
+             prevchart.destroy();
+         }
+
+
+
+        //generation of the chart
+        const xValues = ["Protein", "Carbs", "Fat"];
+        const yValues = [proteinoutput,carbsoutput,fatoutput];
+        const barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797"];
+
+        prevchart = new Chart("myChart", {
+        type: "doughnut",
+        data: {
+            labels: xValues,
+            datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+            }]
+        },
+        options: {
+            title: {
+            display: true,
+            text: "Your Macros for the day!",
+            fontColor: "black",
+            },
+            legend: {
+                labels: {
+                    fontColor: "black",
+                }
+            },
+        }
+        });
+    }
+
+
+
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const mainColorSelect = document.getElementById('main-color');
+    const secondaryColorSelect = document.getElementById('secondary-color');
+    const applyColorsButton = document.getElementById('apply-colors');
+    const sidebarItems = Array.from(document.querySelectorAll('.sidebar ul li a'));
+    const sidebarToggleButton = document.getElementById('btn');
+    const fitCoachText = document.querySelector('.logo span'); // Target Fit Coach text
+
+    // Helper function to determine appropriate text color
+    const getTextColor = (color) => {
+        if (color === '#FFFFFF' || color.toLowerCase() === 'white') {
+            return '#000000'; // Black text for white background
+        }
+        if (color === '#000000' || color.toLowerCase() === 'black') {
+            return '#FFFFFF'; // White text for black background
+        }
+        const rgb = color.startsWith('#') ? color.slice(1) : color;
+        const r = parseInt(rgb.substring(0, 2), 16);
+        const g = parseInt(rgb.substring(2, 4), 16);
+        const b = parseInt(rgb.substring(4, 6), 16);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        return brightness > 186 ? '#000000' : '#FFFFFF';
+    };
+
+    const updateFitCoachText = (textElement, mainColor, secondaryColor) => {
+        let textColor = getTextColor(mainColor); // Default text color based on main color
+
+        // Special exception: if main is white or both main and secondary are white
+        if (
+            (mainColor === '#FFFFFF' || mainColor.toLowerCase() === 'white') ||
+            ((mainColor === '#FFFFFF' || mainColor.toLowerCase() === 'white') &&
+                (secondaryColor === '#FFFFFF' || secondaryColor.toLowerCase() === 'white'))
+        ) {
+            textColor = '#000000'; // Force text to black
+        }
+
+        // Apply the determined text color
+        textElement.style.color = textColor;
+    };
+
+    const updateElementColors = (element, backgroundColor) => {
+        element.style.backgroundColor = backgroundColor;
+        element.style.color = getTextColor(backgroundColor);
+    };
+
+    const updateOptionColors = (selectElement, backgroundColor, textColor) => {
+        Array.from(selectElement.options).forEach((option) => {
+            option.style.backgroundColor = backgroundColor;
+            option.style.color = textColor;
+        });
+    };
+
+    const updateSidebarColors = (sidebarItems, backgroundColor, textColor) => {
+        sidebarItems.forEach((item) => {
+            item.style.backgroundColor = backgroundColor; // Update background color
+            item.style.color = textColor; // Update text color
+        });
+    };
+
+    const updateSidebarToggleButton = (button, backgroundColor, textColor) => {
+        button.style.backgroundColor = backgroundColor;
+        button.style.color = textColor;
+    };
+
+    const savedMainColor = localStorage.getItem('mainColor') || '#1a212b';
+    const savedSecondaryColor = localStorage.getItem('secondaryColor') || '#ffffff';
+    document.documentElement.style.setProperty('--main-color', savedMainColor);
+    document.documentElement.style.setProperty('--secondary-color', savedSecondaryColor);
+
+    mainColorSelect.value = savedMainColor;
+    secondaryColorSelect.value = savedSecondaryColor;
+
+    updateElementColors(mainColorSelect, savedMainColor);
+    updateOptionColors(mainColorSelect, savedMainColor, getTextColor(savedMainColor));
+    updateElementColors(secondaryColorSelect, savedSecondaryColor);
+    updateOptionColors(secondaryColorSelect, savedSecondaryColor, getTextColor(savedSecondaryColor));
+    updateElementColors(applyColorsButton, savedSecondaryColor);
+    updateSidebarColors(sidebarItems, savedSecondaryColor, getTextColor(savedSecondaryColor));
+    updateSidebarToggleButton(sidebarToggleButton, savedSecondaryColor, getTextColor(savedSecondaryColor));
+    updateFitCoachText(fitCoachText, savedMainColor, savedSecondaryColor); // Apply dynamic coloring
+
+    mainColorSelect.addEventListener('change', () => {
+        const mainColor = mainColorSelect.value;
+        const textColor = getTextColor(mainColor);
+        document.documentElement.style.setProperty('--main-color', mainColor);
+        updateElementColors(mainColorSelect, mainColor);
+        updateOptionColors(mainColorSelect, mainColor, textColor);
+    });
+
+    secondaryColorSelect.addEventListener('change', () => {
+        const secondaryColor = secondaryColorSelect.value;
+        const mainColor = mainColorSelect.value;
+        updateElementColors(secondaryColorSelect, secondaryColor);
+        updateOptionColors(secondaryColorSelect, secondaryColor, getTextColor(secondaryColor));
+        updateElementColors(applyColorsButton, secondaryColor);
+        updateSidebarColors(sidebarItems, secondaryColor, getTextColor(secondaryColor));
+        updateSidebarToggleButton(sidebarToggleButton, secondaryColor, getTextColor(secondaryColor));
+        updateFitCoachText(fitCoachText, mainColor, secondaryColor); // Update Fit Coach text dynamically
+    });
+
+    applyColorsButton.addEventListener('click', () => {
+        const mainColor = mainColorSelect.value;
+        const secondaryColor = secondaryColorSelect.value;
+
+        document.documentElement.style.setProperty('--main-color', mainColor);
+        document.documentElement.style.setProperty('--secondary-color', secondaryColor);
+
+        localStorage.setItem('mainColor', mainColor);
+        localStorage.setItem('secondaryColor', secondaryColor);
+
+        updateFitCoachText(fitCoachText, mainColor, secondaryColor); // Ensure Fit Coach text updates
+
+        alert('Colors updated successfully!');
+    });
+});
