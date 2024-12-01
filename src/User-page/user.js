@@ -273,9 +273,9 @@ function calculateCalories() {
         const resultContainer = document.getElementById("calorie-result");
         resultContainer.textContent = `Your estimated daily calorie needs are: ${TDEE} calories.`;
         //total macro consumption
-        const proteinoutput = (TDEE * (parseFloat(proteininput) / 100)) / 4; 
-        const carbsoutput = (TDEE * (parseFloat(carbsinput) / 100)) / 4;
-        const fatoutput = (TDEE * (parseFloat(fatinput) / 100)) / 9;
+        const proteinoutput = Math.round((TDEE * (parseFloat(proteininput) / 100)) / 4); 
+        const carbsoutput = Math.round((TDEE * (parseFloat(carbsinput) / 100)) / 4);
+        const fatoutput = Math.round((TDEE * (parseFloat(fatinput) / 100)) / 9);
     
     
         // disclaimer:

@@ -318,7 +318,7 @@
 .main-content{
     position: relative;
     background-color: var(--main-color); /* Updated */
-    min-height: 100vh;
+    min-height: 115vh;
     top: 0;
     left: 80px;
     transition: all 0.5s ease;
