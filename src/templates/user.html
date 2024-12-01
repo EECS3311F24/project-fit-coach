@@ -8,7 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMUybBfZZfHZp00KHq+YhZOfKJj8HT6z4FSBiD4" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='user/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-r4NyV5BlckV+6LuCqKMZn7b2c9zvI+BrtdXvU18h8FgrK3+N5p5VTLf0BqcT5L6" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
@@ -211,7 +211,7 @@
             <i class="bx bx-menu" id="btn"></i>
         </div>
         <div class="user">
-            <img src="images/fitcoach.webp" alt="fitcoach" class="user-img">
+            <img src="{{ url_for('static', filename='images/Fit Coach Logo.jpeg') }}" alt="fitcoach" class="user-img">
             <div>
                 <p class="bold">Fit Coach</p>
             </div>
@@ -250,7 +250,7 @@
         
     </div>
 
-    <script src="user.js"></script>
+    <script src="{{ url_for('static', filename='user/user.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let btn = document.querySelector('#btn');
