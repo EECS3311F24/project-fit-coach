@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login And Registration Form</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.10.2/core.css">
         <script type="module" src="https://pyscript.net/releases/2024.10.2/core.js"></script>
@@ -12,18 +12,22 @@
     </head>
     <body>
 
-        <!-- <script type="py" src="./server.py" config="./pyscript.json"></script> -->
         <div class="hero">
             <div class="form-box">
 
                 <!-- Logo Image -->
-                <img src="images/Fit Coach Logo.jpeg" alt="Fit Coach Logo" class="logo">
-                
+                <img src="static/images/Fit Coach Logo.jpeg" alt="Fit Coach Logo" class="logo">
+                {% if message %}
+                <div class="alert">
+                    <p>{{ message }}</p>
+                </div>
+                {% endif %}
+
 
                 <!-- Register division -->
                 <div class="container" id="signup" style="display: none;">
                     <h1 class="form-title">Register</h1>
-                    <form method="post" action="">
+                    <form method="post" action="/submit">
                         <div class="input-group">
                             <i class="fas fa-user"></i>
                             <input type="text" name="fName" id="fName" placeholder="First Name" required>
@@ -63,13 +67,13 @@
                     <form id="loginForm" method="post" action="/login">
                         <div class="input-group">
                             <i class="fas fa-envelope"></i>
-                            <input type="text" name="email" id="email" placeholder="Email" required>
-                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email2" placeholder="Email" required>
+                            <label for="email2">Email</label>
                         </div>
                         <div class="input-group">
                             <i class="fas fa-lock"></i>
-                            <input type="password" name="password" id="password" placeholder="Password" required>
-                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password2" placeholder="Password" required>
+                            <label for="password2">Password</label>
                         </div>
                         <p class="recover">
                             <a href="#">Recover Password</a>
@@ -90,6 +94,23 @@
 
             </div>
         </div>
-        <script src="script.js"></script>
+        <script>
+            const signUpButton=document.getElementById('signUpButton');
+            const signInButton=document.getElementById('signInButton');
+            const signInForm=document.getElementById('signIn');
+            const signUpForm=document.getElementById('signup');
+
+            signUpButton.addEventListener('click',function(){
+                signInForm.style.display="none";
+                signUpForm.style.display="block";
+            })
+            signInButton.addEventListener('click', function(){
+                signInForm.style.display="block";
+                signUpForm.style.display="none";
+            })
+
+            const forms = document.querySelectorAll("form");
+            forms.forEach(form => form.reset());
+    </script>
     </body>
 </html>
