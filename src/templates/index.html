@@ -12,22 +12,17 @@
     </head>
     <body>
 
+        <!-- <script type="py" src="./server.py" config="./pyscript.json"></script> -->
         <div class="hero">
             <div class="form-box">
 
                 <!-- Logo Image -->
                 <img src="static/images/Fit Coach Logo.jpeg" alt="Fit Coach Logo" class="logo">
-                {% if message %}
-                <div class="alert">
-                    <p>{{ message }}</p>
-                </div>
-                {% endif %}
-
 
                 <!-- Register division -->
                 <div class="container" id="signup" style="display: none;">
                     <h1 class="form-title">Register</h1>
-                    <form method="post" action="/submit">
+                    <form method="post" action="">
                         <div class="input-group">
                             <i class="fas fa-user"></i>
                             <input type="text" name="fName" id="fName" placeholder="First Name" required>
@@ -67,21 +62,21 @@
                     <form id="loginForm" method="post" action="/login">
                         <div class="input-group">
                             <i class="fas fa-envelope"></i>
-                            <input type="text" name="email" id="email2" placeholder="Email" required>
-                            <label for="email2">Email</label>
+                            <input type="text" name="email" id="email" placeholder="Email" required>
+                            <label for="email">Email</label>
                         </div>
                         <div class="input-group">
                             <i class="fas fa-lock"></i>
-                            <input type="password" name="password" id="password2" placeholder="Password" required>
-                            <label for="password2">Password</label>
+                            <input type="password" name="password" id="password" placeholder="Password" required>
+                            <label for="password">Password</label>
                         </div>
                         <p class="recover">
                             <a href="#">Recover Password</a>
                         </p>
-                    
+
                         <input type="submit" class="btn" value="Sign In" name="signIn">
                     </form>
-                    
+
                     <div class="icons">
                         <i class="fab fa-google"></i>
                     </div>
@@ -111,6 +106,6 @@
 
             const forms = document.querySelectorAll("form");
             forms.forEach(form => form.reset());
-    </script>
+        </script>
     </body>
 </html>
