@@ -45,14 +45,22 @@
 #workoutsList {
     list-style-type: none;
     padding: 0;
+    padding: 0;
+    margin: 0;
+    max-height: 500px;        
 }
 
 #workoutsList li {
     margin-bottom: 15px;
     padding: 10px;
-    background-color: #fff;
+    background-color: #9ccbea;
+    color: black;
     border: 1px solid #ccc;
     border-radius: 5px;
+    list-style-type: none;
+    position: relative;
+    z-index: 1;
+    
 }
 
 
@@ -88,17 +96,39 @@
     width: auto; /* Adjust width as needed */
 }
 
-#savedWorkoutsContainer {
+/*#savedWorkoutsContainer {
     margin-top: 50px; /* Space between button and container */
-    /* z-index: 15px; */
+    /* z-index: 15px; 
     margin-right: 1100px;
     padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: 50%; /* Match the container width with the button */
-    max-width: 250px; /* Optional: cap the maximum width */
+    width: 50%; /* Match the container width with the button 
+    max-width: 250px; /* Optional: cap the maximum width 
+    overflow-y: auto; /* Enable vertical scrolling 
+    
 }
+    */
+    #savedWorkoutsContainer {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        margin-top: 20px; /* Space from other elements */
+        padding: 10px;
+        background-color: #496ea097;
+        color: white;
+        border: 1px solid #ddd;
+        text-shadow: 5px #12171e;
+
+        border-radius: 5px;
+        width: 250px; /* Fixed width for consistency */
+        max-height: 500px; /* Set a maximum height for scrolling */
+        overflow-y: auto; /* Enable vertical scrolling */
+        overflow-x: hidden; /* Disable horizontal scrolling */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better appearance */
+    }
+    
 
 #savedWorkoutsContainer h2 {
     font-size: 18px;
@@ -505,7 +535,7 @@ color: #fff;
     color: white;
     bottom: 150px;
     left: 300px;
-    width: 350px;
+    width: 355px;
     cursor: pointer;
     margin-top: 20% ;
     border-radius: 10px;
@@ -514,6 +544,59 @@ color: #fff;
     padding: 5px;
     text-shadow: 5px #12171e;
 }
+
+#push-btn{
+
+    position: absolute;
+    background-color: #496ea097;
+    color: white;
+    bottom: 70px;
+    left: 300px;
+    width: 115px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
+}
+
+#pull-btn{
+
+    position: absolute;
+    background-color: #496ea097;
+    color: white;
+    bottom: 70px;
+    left: 420px;
+    width: 115px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
+}
+
+#legs-btn{
+
+    position: absolute;
+    background-color: #496ea097;
+    color: white;
+    bottom: 70px;
+    left: 540px;
+    width: 115px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
+}
+
+
 #overlay {
     position: fixed;
     top: 0;
@@ -692,6 +775,7 @@ color: white;
     background-color: black;
 }
 
+<<<<<<< Updated upstream:src/static/user/style.css
 .macro-field{
     display: flex;
     justify-content: center;
@@ -763,4 +847,23 @@ color: white;
 .color-customization select option:hover {
     background-color: var(--secondary-color); /* Use secondary color for hover */
     color: var(--main-color); /* Use main color for hover text */
+=======
+#workoutsList button{
+    background-color: #ff4d4d; /* Red background */
+    color: rgb(7, 7, 7);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    visibility: visible;
+    z-index: 10; 
+}
+
+#workoutsList button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+>>>>>>> Stashed changes:src/User-page/style.css
 }

@@ -168,48 +168,69 @@ function saveWorkout() {
     let workoutData = [];
 
     rows.forEach(row => {
-        const exercise = row.querySelector('td:nth-child(1) input').value;
+        const exercise = row.querySelector('td:nth-child(1) input').value.trim();
         const repsInputs = row.querySelectorAll('td:nth-child(2) .input-field');
         const weightInputs = row.querySelectorAll('td:nth-child(3) .input-field');
 
+        if (!exercise) {
+            alert("Please enter an exercise name.");
+            return;
+        }
+
         let sets = [];
         repsInputs.forEach((repInput, index) => {
-            sets.push({
-                reps: repInput.value,
-                weight: weightInputs[index].value
-            });
+            const reps = repInput.value.trim();
+            const weight = weightInputs[index]?.value.trim();
+
+            if (!reps || !weight) {
+                alert("Please fill out all reps and weight fields.");
+                return;
+            }
+
+            sets.push({ reps, weight });
         });
 
         workoutData.push({ exercise, sets });
     });
 
-    // Display the workout data
     const workoutsList = document.getElementById('workoutsList');
     workoutData.forEach(workout => {
         const workoutItem = document.createElement('li');
         workoutItem.innerHTML = `
-            <strong>Exercise:</strong> ${workout.exercise} <br>
-            <strong>Sets:</strong>
-            <ul>
-                ${workout.sets
-                    .map(
-                        set => `<li>Reps: ${set.reps}, Weight: ${set.weight}</li>`
-                    )
-                    .join('')}
-            </ul>
+            <div>
+                <strong>Exercise:</strong> ${workout.exercise} <br>
+                <strong>Sets:</strong>
+                <ul>
+                    ${workout.sets
+                        .map(
+                            set => `<li>Reps: ${set.reps}, Weight: ${set.weight}</li>`
+                        )
+                        .join('')}
+                                    
+
+                </ul>
+
+            </div>
         `;
         workoutsList.appendChild(workoutItem);
     });
 
-    // Provide feedback to the user
-    alert("Workout saved successfully!");
-
-    // Optionally, clear the input fields
+    // Clear input fields after saving
     rows.forEach(row => {
         row.querySelector('td:nth-child(1) input').value = '';
         row.querySelectorAll('td:nth-child(2) .input-field').forEach(input => input.value = '');
         row.querySelectorAll('td:nth-child(3) .input-field').forEach(input => input.value = '');
     });
+
+    alert("Workout saved successfully!");
+}
+
+function deleteWorkout(button) {
+    const workoutItem = button.closest('li'); // Get the parent <li> of the button
+    if (workoutItem) {
+        workoutItem.remove(); // Remove the <li> from the DOM
+        alert("Workout deleted successfully!");
+    }
 }
 
 
@@ -265,6 +286,7 @@ function calculateCalories() {
     const TDEE = Math.round(BMR * activityFactor);
     // alert(`Based on your inputs, your estimated daily calorie needs are ${TDEE} calories.`);
     // resultContainer.style.color = "green";
+<<<<<<< Updated upstream:src/static/user/user.js
     if( proteininput + carbsinput + fatinput !== 100){
         alert("Please ensure that the sum of your macros is 100%");
 
@@ -444,3 +466,85 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Colors updated successfully!');
     });
 });
+=======
+}
+
+
+
+const predefinedWorkouts = {
+    push: [
+        { exercise: "Flat Barbell Bench Press", sets: [{ reps: 8, weight: 135 }] },
+        { exercise: "Incline Dumbbell Press", sets: [{ reps: 10, weight: 50 }] },
+        { exercise: "Overhead Barbell Press", sets: [{ reps: 6, weight: 40 }] },
+        { exercise: "Lateral Raises", sets: [{ reps: 12, weight: 15 }] },
+        { exercise: "Tricep Dips", sets: [{ reps: 10, weight: "Bodyweight" }] },
+    ],
+    pull: [
+        { exercise: "Deadlift", sets: [{ reps: 5, weight: 200 }] },
+        { exercise: "Pull-Ups", sets: [{ reps: 6, weight: "Bodyweight" }] },
+        { exercise: "Bent-Over Rows", sets: [{ reps: 8, weight: 115 }] },
+        { exercise: "Face Pulls", sets: [{ reps: 12, weight: 20 }] },
+        { exercise: "Bicep Curls", sets: [{ reps: 12, weight: 25 }] },
+    ],
+    legs: [
+        { exercise: "Barbell Squats", sets: [{ reps: 5, weight: 200 }] },
+        { exercise: "Romanian Deadlift", sets: [{ reps: 6, weight: 150 }] },
+        { exercise: "Leg Press", sets: [{ reps: 8, weight: 400 }] },
+        { exercise: "Walking Lunges", sets: [{ reps: 10, weight: 30 }] },
+        { exercise: "Standing Calf Raises", sets: [{ reps: 15, weight: 40 }] },
+    ],
+};
+
+/*const predefinedWorkouts = {
+    push: [
+        { exercise: "Bench Press", sets: [{ reps: 8, weight: 135 }], },
+        { exercise: "Incline Dumbbell Press", sets: [{ reps: 10, weight: 50 }] },
+        { exercise: "Overhead Press", sets: [{ reps: 12, weight: 40 }] },
+    ],
+    pull: [
+        { exercise: "Pull-Ups", sets: [{ reps: 8, weight: "Bodyweight" }] },
+        { exercise: "Barbell Row", sets: [{ reps: 10, weight: 115 }] },
+        { exercise: "Bicep Curl", sets: [{ reps: 12, weight: 25 }] },
+    ],
+    legs: [
+        { exercise: "Squats", sets: [{ reps: 10, weight: 200 }] },
+        { exercise: "Leg Press", sets: [{ reps: 12, weight: 400 }] },
+        { exercise: "Lunges", sets: [{ reps: 10, weight: 30 }] },
+    ],
+};*/
+
+
+function pushFn() {
+    addPredefinedWorkout(predefinedWorkouts.push);
+}
+
+function pullFn() {
+    addPredefinedWorkout(predefinedWorkouts.pull);
+}
+
+function legsFn() {
+    addPredefinedWorkout(predefinedWorkouts.legs);
+}
+
+function addPredefinedWorkout(workouts) {
+    const workoutsList = document.getElementById('workoutsList');
+
+    workouts.forEach(workout => {
+        const workoutItem = document.createElement('li');
+        workoutItem.innerHTML = `
+            <strong>Exercise:</strong> ${workout.exercise} <br>
+            <strong>Sets:</strong>
+            <ul>
+                ${workout.sets
+                    .map(set => `<li>Reps: ${set.reps}, Weight: ${set.weight}</li>`)
+                    .join('')}
+            </ul>
+            <button onclick="deleteWorkout(this)">Delete</button>
+        `;
+        workoutsList.appendChild(workoutItem);
+    });
+
+    alert("Workout added successfully!");
+}
+
+>>>>>>> Stashed changes:src/User-page/user.js
