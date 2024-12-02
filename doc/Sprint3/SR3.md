@@ -1,6 +1,6 @@
 # Sprint 3 Retrospective
 
-**Meeting Date:** 30th November, 2024
+**Meeting Date:** 1st December, 2024
 
 **Participants:**
 - Dani (Backend)
