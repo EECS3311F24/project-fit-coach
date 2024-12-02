@@ -89,16 +89,24 @@
 }
 
 #savedWorkoutsContainer {
-    margin-top: 50px; /* Space between button and container */
-    /* z-index: 15px; */
-    margin-right: 1100px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 50%; /* Match the container width with the button */
-    max-width: 250px; /* Optional: cap the maximum width */
-}
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #496ea097;
+        color: black;
+        border: 1px solid #ddd;
+        text-shadow: 5px #12171e;
+
+        border-radius: 5px;
+        width: 250px; / Fixed width for consistency /
+        max-height: 500px; / Set a maximum height for scrolling /
+        overflow-y: auto; / Enable vertical scrolling /
+        overflow-x: hidden; / Disable horizontal scrolling /
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
 
 #savedWorkoutsContainer h2 {
     font-size: 18px;
@@ -473,8 +481,8 @@ color: #fff;
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 10px;
+    gap: 2px;
+    padding: 2px;
     background-color: #496fa0;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -482,13 +490,56 @@ color: #fff;
     transform: scale(1.5,1.5);
    top: 150px;
    right: 300px;
-
-
 }
 
-.input-fields label {
-    font-weight: 600;
-    color: #333;
+#push-btn{
+
+    position: relative;
+    background-color: #496ea097;
+    color: white;
+    bottom: 100px;
+    left: -60px;
+    width: 115px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
+}
+
+#pull-btn{
+
+    position: relative;
+    background-color: #496ea097;
+    color: white;
+    bottom: 100px;
+    left: -60px;
+    width: 115px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
+}
+
+#legs-btn{
+    position: relative;
+    background-color: #496ea097;
+    color: white;
+    bottom: 100px;
+    left: -60px;
+    width: 115px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
 }
 
 .input-fields input {
@@ -500,12 +551,12 @@ color: #fff;
 
 /* ---------- Log workout ---------- */
 #workout-btn{
-    position: absolute;
+    position: relative;
     background-color: #496ea097;
     color: white;
     bottom: 150px;
     left: 300px;
-    width: 350px;
+    width: 355px;
     cursor: pointer;
     margin-top: 20% ;
     border-radius: 10px;
@@ -514,6 +565,7 @@ color: #fff;
     padding: 5px;
     text-shadow: 5px #12171e;
 }
+
 #overlay {
     position: fixed;
     top: 0;
@@ -672,11 +724,6 @@ background-color: #f2f2f2;
 display: flex;
 flex-direction: column;
 gap: 5px;
-}
-.input-field {
-width: 90%;
-padding: 5px;
-
 }
 .add-row-btn {
 margin: 10px 0;
