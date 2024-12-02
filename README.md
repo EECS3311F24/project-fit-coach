@@ -10,7 +10,7 @@ The Demo video for sprint1: [video](doc/Sprint1/sprint1demo.mp4)
 
 The Demo video for sprint2: [video](doc/Sprint2/sprint2demo.mp4)
 
-The Demo video for sprint2: [video](doc/Sprint3/sprint3demo.mp4)
+The Demo video for sprint3: [video](doc/Sprint3/sprint3demo.mp4)
 
 NOTE: to view the video as an mp4 file, it should be downloaded
 
