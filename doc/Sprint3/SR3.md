@@ -5,7 +5,7 @@
 **Participants:**
 - Dani (Backend)
 - Stef (Backend)
-- Yuri (Frontend)
+- Yuri (Fullstack)
 - Omar (Frontend)
 - Haisam (Frontend)
 
