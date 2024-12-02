@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login And Registration Form</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
         <link rel="stylesheet" href="https://pyscript.net/releases/2024.10.2/core.css">
         <script type="module" src="https://pyscript.net/releases/2024.10.2/core.js"></script>
@@ -17,8 +17,7 @@
             <div class="form-box">
 
                 <!-- Logo Image -->
-                <img src="images/Fit Coach Logo.jpeg" alt="Fit Coach Logo" class="logo">
-                
+                <img src="static/images/Fit Coach Logo.jpeg" alt="Fit Coach Logo" class="logo">
 
                 <!-- Register division -->
                 <div class="container" id="signup" style="display: none;">
@@ -74,10 +73,10 @@
                         <p class="recover">
                             <a href="#">Recover Password</a>
                         </p>
-                    
+
                         <input type="submit" class="btn" value="Sign In" name="signIn">
                     </form>
-                    
+
                     <div class="icons">
                         <i class="fab fa-google"></i>
                     </div>
@@ -90,6 +89,23 @@
 
             </div>
         </div>
-        <script src="script.js"></script>
+        <script>
+            const signUpButton=document.getElementById('signUpButton');
+            const signInButton=document.getElementById('signInButton');
+            const signInForm=document.getElementById('signIn');
+            const signUpForm=document.getElementById('signup');
+
+            signUpButton.addEventListener('click',function(){
+                signInForm.style.display="none";
+                signUpForm.style.display="block";
+            })
+            signInButton.addEventListener('click', function(){
+                signInForm.style.display="block";
+                signUpForm.style.display="none";
+            })
+
+            const forms = document.querySelectorAll("form");
+            forms.forEach(form => form.reset());
+        </script>
     </body>
 </html>

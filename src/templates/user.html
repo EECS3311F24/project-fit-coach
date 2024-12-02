@@ -8,22 +8,52 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMUybBfZZfHZp00KHq+YhZOfKJj8HT6z4FSBiD4" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='user/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-r4NyV5BlckV+6LuCqKMZn7b2c9zvI+BrtdXvU18h8FgrK3+N5p5VTLf0BqcT5L6" crossorigin="anonymous">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 <body>
 
     <div class="header">
         <header>
             <span><h1>Fit Coach</h1></span>
+            <div class="color-customization">
+                <label for="main-color">Main:</label>
+                <select id="main-color">
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="orange">Orange</option>
+                    <option value="gold">Gold</option>
+                    <option value="silver">Silver</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                </select>
+
+                <label for="secondary-color">Secondary:</label>
+                <select id="secondary-color">
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="orange">Orange</option>
+                    <option value="gold">Gold</option>
+                    <option value="silver">Silver</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                </select>
+
+                <button id="apply-colors" class="btn-calculate">Apply</button>
+            </div>
             <i class='bx bx-user' id="header-button"></i>
         </header>
     </div>
 
+
+
+
     <div class="main-content">
-        
-        
+
+
 
         <div class="calendar-container">
             <!-- ------------------------------------------------------------- -->
@@ -34,7 +64,7 @@
                 <div class="head">
                     <button id="prevBtn">
                         <i class='bx bx-chevron-left'></i>
-                        
+
                     </button>
                     <div class="monthYear" id="monthYear"></div>
                     <button id="nextBtn">
@@ -55,6 +85,7 @@
             <!-- ------------------------------------------------------------- -->
                                         <!-- Inputs -->
             <!-- ------------------------------------------------------------- -->
+
             <div class="input-fields">
                 <label for="weight">Weight:</label>
                 <div class="weight-input-container">
@@ -65,7 +96,7 @@
                         <option value="st">st</option>
                     </select>
                 </div>
-            
+
                 <label for="height">Height:</label>
                 <div class="height-input-container">
                     <input type="number" id="height" name="height" placeholder="Enter height">
@@ -106,11 +137,23 @@
 
                 <button class="btn-calculate" onclick="calculateCalories()">Calculate Calories</button>
                 <div id="calorie-result" style="margin-top: 15px; font-weight: bold;"></div>
+                <div class="macro-field">
+                    <input type="number" id="Protein" class="macro-input-field" placeholder="Protein">
+                    <input type="number" id ="Carbs"  class="macro-input-field" placeholder="Carbs">
+                    <input type="number" id="Fat"     class="macro-input-field" placeholder="Fat">
+                </div>
+
+                <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+
 
             </div>
             
         </div>
         <button id="workout-btn" class="save-btn" onclick="openFn()">Log New Workout</button>
+        <button id="push-btn" class="save-btn" onclick="pushFn()">Push</button>
+        <button id="pull-btn" class="save-btn" onclick="pullFn()">Pull</button>
+        <button id="legs-btn" class="save-btn" onclick="legsFn()">Legs</button>
         <!-- Workout Section -->
         <div class="workout-section">
             
@@ -172,7 +215,7 @@
             <i class="bx bx-menu" id="btn"></i>
         </div>
         <div class="user">
-            <img src="images/fitcoach.webp" alt="fitcoach" class="user-img">
+            <img src="{{ url_for('static', filename='images/Fit Coach Logo.jpeg') }}" alt="fitcoach" class="user-img">
             <div>
                 <p class="bold">Fit Coach</p>
             </div>
@@ -211,7 +254,7 @@
         
     </div>
 
-    <script src="user.js"></script>
+    <script src="{{ url_for('static', filename='user/user.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let btn = document.querySelector('#btn');
@@ -222,5 +265,7 @@
             };
         });
     </script>
+
+
 </body>
 </html>

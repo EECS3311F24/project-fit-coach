@@ -1,3 +1,8 @@
+:root {
+    --main-color: #1a212b; /* Default main color */
+    --secondary-color: #ffffff; /* Default secondary color */
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,8 +11,8 @@
 }
 
 .btn-calculate {
-    background-color: #393e9d; /* A nice green color */
-    color: white; /* White text for contrast */
+    background-color: var(--secondary-color); /* Updated */
+    color: var(--main-color); /* Updated */
     font-size: 16px; /* Slightly larger text */
     font-weight: bold; /* Make the text bold */
     border: none; /* Remove default border */
@@ -84,16 +89,24 @@
 }
 
 #savedWorkoutsContainer {
-    margin-top: 50px; /* Space between button and container */
-    /* z-index: 15px; */
-    margin-right: 1100px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 50%; /* Match the container width with the button */
-    max-width: 250px; /* Optional: cap the maximum width */
-}
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #496ea097;
+        color: black;
+        border: 1px solid #ddd;
+        text-shadow: 5px #12171e;
+
+        border-radius: 5px;
+        width: 250px; / Fixed width for consistency /
+        max-height: 500px; / Set a maximum height for scrolling /
+        overflow-y: auto; / Enable vertical scrolling /
+        overflow-x: hidden; / Disable horizontal scrolling /
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
 
 #savedWorkoutsContainer h2 {
     font-size: 18px;
@@ -108,7 +121,7 @@
     left: 0;
     height: 200vh;
     width: 80px;
-    background-color: #12171e;
+    background-color: var(--main-color); /* Updated */
     padding: 0.4rem 0.8rem;
     transition: all 0.5s ease;
     z-index: 10;
@@ -118,7 +131,7 @@
     left: 250px;
     width: calc(100% - 250px);
     /*margin-left: -170px; /* Shift left by the difference when sidebar expands */
-    transition: all 0.5s ease; 
+    transition: all 0.5s ease;
 }
 
 .sidebar.active{
@@ -127,16 +140,37 @@
 
 
 
-.sidebar #btn{
-    position: relative;
-    color: #fff;
-    top: 0.4rem;
-    left: 50%;
-    font-size: 1.2rem;
-    line-height: 50px;
-    transform: translateX(-50%);
-    cursor: pointer;
+.sidebar #btn {
+    background-color: var(--secondary-color); /* Match secondary color */
+    color: var(--main-color); /* Match main color for text */
+    border: none; /* Remove any border */
+    border-radius: 8px; /* Add rounded corners */
+    font-size: 24px; /* Adjust font size of the dashes */
+    width: 40px; /* Adjust width of the box */
+    height: 40px; /* Adjust height of the box */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center align vertically */
+    justify-content: center; /* Center align horizontally */
+    line-height: 0; /* Prevent extra line height from affecting alignment */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    cursor: pointer; /* Maintain pointer cursor */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+
+.sidebar #btn:hover {
+    background-color: var(--main-color); /* Change background color on hover */
+    color: var(--secondary-color); /* Change text color on hover */
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+.sidebar #btn i {
+    display: inline-block; /* Ensure the icon behaves like an inline block */
+    margin: 0; /* Remove any margin around the icon */
+    padding: 0; /* Remove any padding inside the icon */
+}
+
 
 .sidebar.active #btn{
     left: 90%
@@ -192,17 +226,17 @@
     margin: 0.8rem auto;
     line-height: 50px;
 }
-.sidebar ul li a{
-    color: #fff;
+.sidebar ul li a {
+    color: var(--secondary-color); /* Updated */
     display: flex;
     align-items: center;
     text-decoration: none;
     border-radius: 0.8rem;
 }
 
-.sidebar ul li a:hover{
-    background-color: #fff;
-    color: #12171e;
+.sidebar ul li a:hover {
+    background-color: var(--secondary-color); /* Updated */
+    color: var(--main-color); /* Updated */
 }
 
 .sidebar ul li a i{
@@ -243,14 +277,15 @@
 
 .header{
     position: fixed;
-    background-color: #1a212b;
+    background-color: var(--main-color); /* Updated */
+    color: var(--secondary-color); /* Updated */
     top: 0;
     left: 80px; /* Initial position when sidebar is collapsed */
     width: calc(100% - 80px); /* Adjusts to sidebar width */
     height: 100px;
     transition: all 0.5s ease;
     z-index: 5;
-   
+
 }
 
 .header header {
@@ -265,7 +300,7 @@
     height: 100px;
     transition: margin-left 0.5s ease; /* Smooth transition */
     margin-left: 0; /* Initial position */
-    
+
 }
 
 #header-button {
@@ -290,15 +325,15 @@
 
 .main-content{
     position: relative;
-    background-color: #1d2229;
-    min-height: 100vh;
+    background-color: var(--main-color); /* Updated */
+    min-height: 155vh;
     top: 0;
     left: 80px;
     transition: all 0.5s ease;
     width: calc(100% - 80px);
     margin-top: 100px;
     padding: 1rem;
-   
+
 }
 
 
@@ -308,7 +343,7 @@
     align-items: center;
     justify-content: center;
     background: #fff;
-    
+
   }*/
 
   .body{
@@ -336,7 +371,7 @@ position: relative;
     margin-left: 20%;
    transform: scale(1, 1);
 
- 
+
 }
 
 .head{
@@ -380,7 +415,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
 .dates{
-    
+
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
@@ -437,7 +472,7 @@ color: #fff;
 
 .calendar-container {
     display: flex;
-    gap: 40px; 
+    gap: 40px;
 
 
 }
@@ -446,8 +481,8 @@ color: #fff;
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 10px;
+    gap: 2px;
+    padding: 2px;
     background-color: #496fa0;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -455,13 +490,56 @@ color: #fff;
     transform: scale(1.5,1.5);
    top: 150px;
    right: 300px;
-    
-    
 }
 
-.input-fields label {
-    font-weight: 600;
-    color: #333;
+#push-btn{
+
+    position: relative;
+    background-color: #496ea097;
+    color: white;
+    bottom: 100px;
+    left: -60px;
+    width: 115px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
+}
+
+#pull-btn{
+
+    position: relative;
+    background-color: #496ea097;
+    color: white;
+    bottom: 100px;
+    left: -60px;
+    width: 115px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
+}
+
+#legs-btn{
+    position: relative;
+    background-color: #496ea097;
+    color: white;
+    bottom: 100px;
+    left: -60px;
+    width: 115px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
 }
 
 .input-fields input {
@@ -473,12 +551,12 @@ color: #fff;
 
 /* ---------- Log workout ---------- */
 #workout-btn{
-    position: absolute;
+    position: relative;
     background-color: #496ea097;
     color: white;
     bottom: 150px;
     left: 300px;
-    width: 350px;
+    width: 355px;
     cursor: pointer;
     margin-top: 20% ;
     border-radius: 10px;
@@ -487,6 +565,7 @@ color: #fff;
     padding: 5px;
     text-shadow: 5px #12171e;
 }
+
 #overlay {
     position: fixed;
     top: 0;
@@ -646,11 +725,6 @@ display: flex;
 flex-direction: column;
 gap: 5px;
 }
-.input-field {
-width: 90%;
-padding: 5px;
-
-}
 .add-row-btn {
 margin: 10px 0;
 border-radius: 12%;
@@ -663,4 +737,77 @@ color: white;
 }
 #exercise-table-header{
     background-color: black;
+}
+
+.macro-field{
+    display: flex;
+    justify-content: center;
+}
+
+.macro-input-field{
+    width: 80px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 5px;
+}
+.macro-input-field::placeholder{
+    font-size: 15px;
+}
+
+/* for page customazition */
+.color-customization {
+    display: flex;
+    align-items: center; /* Vertically aligns items with the profile icon */
+    gap: 15px; /* Adds spacing between dropdowns and button */
+    position: absolute;
+    top: 50%; /* Vertically centers the buttons within the header */
+    right: 90px; /* Adjusts distance from the profile icon */
+    transform: translateY(-50%); /* Fixes vertical alignment */
+}
+
+.color-customization select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: inherit; /* Allow JavaScript to control text color */
+    cursor: pointer;
+    appearance: none; /* Remove default browser styles */
+}
+
+.color-customization select option {
+    color: #000000; /* Text inside options is black for visibility */
+}
+
+.color-customization button {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.color-customization button:hover {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+}
+
+/* Style the dropdown options */
+.color-customization select option {
+    background-color: #000000; /* Default background for options (black) */
+    color: #FFFFFF; /* Default text color for options (white) */
+}
+
+/* Ensure options reflect the selected dropdown background and text color */
+.color-customization select {
+    background-color: inherit; /* Matches the select's background */
+    color: inherit; /* Matches the select's text color */
+}
+
+/* Adjust hover behavior for better visibility */
+.color-customization select option:hover {
+    background-color: var(--secondary-color); /* Use secondary color for hover */
+    color: var(--main-color); /* Use main color for hover text */
 }
