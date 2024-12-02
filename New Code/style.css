@@ -1,0 +1,849 @@
+:root {
+    --main-color: #1a212b; /* Default main color */
+    --secondary-color: #ffffff; /* Default secondary color */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-calculate {
+    background-color: var(--secondary-color); /* Updated */
+    color: var(--main-color); /* Updated */
+    font-size: 16px; /* Slightly larger text */
+    font-weight: bold; /* Make the text bold */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 20px; /* Add padding for a comfortable size */
+    cursor: pointer; /* Change the cursor to indicate clickability */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.btn-calculate:hover {
+    background-color: #13137b; /* Darker green on hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
+    transform: translateY(-2px); /* Lift the button slightly */
+}
+
+.btn-calculate:active {
+    background-color: #00337b; /* Even darker green when active */
+    transform: translateY(1px); /* Pressed effect */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15); /* Reduced shadow */
+}
+
+/* ---------- Side header ---------- */
+.user-img{
+    width: 50px;
+    border: 1px solid #eeee;
+}
+
+
+#workoutsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#workoutsList li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.workout-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center the elements horizontally */
+    margin-top: 20px; /* Adjust spacing from other sections */
+    padding: 10px;
+    width: 100%; /* Ensure it spans the available space */
+}
+
+
+.workout-section {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center the elements horizontally */
+    margin-top: 20px; /* Adjust spacing from other sections */
+    padding: 10px;
+    width: 100%; /* Ensure it spans the available space */
+}
+
+.save-btn {
+    margin-bottom: 10px; /* Space below the button */
+    background-color: #496ea097;
+    color: white;
+    padding: 10px 20px;
+    position:fixed;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: auto; /* Adjust width as needed */
+}
+
+#savedWorkoutsContainer {
+    margin-top: 50px; /* Space between button and container */
+    /* z-index: 15px; */
+    margin-right: 1100px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 50%; /* Match the container width with the button */
+    max-width: 250px; /* Optional: cap the maximum width */
+}
+
+#savedWorkoutsContainer h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center; /* Center align the heading */
+}
+
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 200vh;
+    width: 80px;
+    background-color: var(--main-color); /* Updated */
+    padding: 0.4rem 0.8rem;
+    transition: all 0.5s ease;
+    z-index: 10;
+}
+
+.sidebar.active ~ .header{
+    left: 250px;
+    width: calc(100% - 250px);
+    /*margin-left: -170px; /* Shift left by the difference when sidebar expands */
+    transition: all 0.5s ease; 
+}
+
+.sidebar.active{
+    width:250px;
+}
+
+
+
+.sidebar #btn {
+    background-color: var(--secondary-color); /* Match secondary color */
+    color: var(--main-color); /* Match main color for text */
+    border: none; /* Remove any border */
+    border-radius: 8px; /* Add rounded corners */
+    font-size: 24px; /* Adjust font size of the dashes */
+    width: 40px; /* Adjust width of the box */
+    height: 40px; /* Adjust height of the box */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center align vertically */
+    justify-content: center; /* Center align horizontally */
+    line-height: 0; /* Prevent extra line height from affecting alignment */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    cursor: pointer; /* Maintain pointer cursor */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.sidebar #btn:hover {
+    background-color: var(--main-color); /* Change background color on hover */
+    color: var(--secondary-color); /* Change text color on hover */
+    transform: scale(1.05); /* Slightly enlarge the box on hover */
+}
+
+.sidebar #btn i {
+    display: inline-block; /* Ensure the icon behaves like an inline block */
+    margin: 0; /* Remove any margin around the icon */
+    padding: 0; /* Remove any padding inside the icon */
+}
+
+
+.sidebar.active #btn{
+    left: 90%
+}
+
+
+.sidebar .top .logo{
+    color: white;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.sidebar.active.top.logo{
+    opacity: 1;
+}
+
+.top.logo i{
+    font-size: 2rem;
+    margin-right: 5px;
+
+}
+.user{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+.user p{
+    color: #fff;
+    opacity: 1;
+    margin-left: 1rem;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.sidebar p{
+    opacity: 0;
+}
+.sidebar.active p{
+    opacity: 1;
+}
+
+.sidebar ul li{
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+}
+.sidebar ul li a {
+    color: var(--secondary-color); /* Updated */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--secondary-color); /* Updated */
+    color: var(--main-color); /* Updated */
+}
+
+.sidebar ul li a i{
+    min-width: 50px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+}
+
+.sidebar .nav-item{
+    opacity: 0;
+}
+.sidebar.active .nav-item{
+    opacity: 1;
+}
+
+.sidebar ul li .tooltip{
+    position: relative;
+    left: 125px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.6rem;
+    padding: 0.4rem 1.2rem;
+    line-height: 1.8 rem;
+    z-index: 20;
+    opacity: 0;
+}
+
+.sidebar .active ul li:hover .tooltip{
+    opacity: 1;
+}
+
+.sidebar .active ul li .tooltip{
+    display: none;
+}
+
+.header{
+    position: fixed;
+    background-color: var(--main-color); /* Updated */
+    color: var(--secondary-color); /* Updated */
+    top: 0;
+    left: 80px; /* Initial position when sidebar is collapsed */
+    width: calc(100% - 80px); /* Adjusts to sidebar width */
+    height: 100px;
+    transition: all 0.5s ease;
+    z-index: 5;
+   
+}
+
+.header header {
+
+    background-color: #12171e;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 20px;
+    height: 100px;
+    transition: margin-left 0.5s ease; /* Smooth transition */
+    margin-left: 0; /* Initial position */
+    
+}
+
+#header-button {
+    background-color: #FFFFFF;
+    color: #12171e;
+    border-radius: 50%;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: background-color 0.3s;
+}
+
+#header-button:hover {
+    background-color: grey;
+}
+
+
+
+
+/* ---------- Main Body ---------- */
+
+.main-content{
+    position: relative;
+    background-color: var(--main-color); /* Updated */
+    min-height: 150vh;
+    top: 0;
+    left: 80px;
+    transition: all 0.5s ease;
+    width: calc(100% - 80px);
+    margin-top: 100px;
+    padding: 1rem;
+   
+}
+
+
+*/*body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    
+  }*/
+
+  .body{
+
+position: relative;
+
+
+
+
+  }
+
+.calender {
+	width: 380px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	background: #496ea097;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    align-self: flex-start;
+   /*float: left;*/
+    top: 100px;
+    bottom: 200px;
+    margin-left: 20%;
+   transform: scale(1, 1);
+
+ 
+}
+
+.head{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px;
+
+
+
+}
+
+.head button{
+
+display: flex;
+align-items: center;
+justify-content: center;
+border: none;
+border-radius: 50%;
+background: #a9cd24;
+cursor: pointer;
+width: 30px;
+height: 30px;
+box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+
+
+}
+
+.days{
+
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}
+
+.day{
+
+    text-align: center;
+    padding: 5px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.dates{
+    
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+
+}
+
+.date{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: 0.2s;
+
+
+
+}
+
+.date:hover,
+.date.active{
+
+    background: #ff5869;
+    color: #fff;
+
+}
+
+
+.date.inactive{
+
+
+    color: #d2d2d2;
+
+}
+
+.date.inactive.hover{
+
+color: #fff;
+
+}
+
+.monthYear{
+
+    text-align: center;
+    font-weight: 600;
+    width: 150px;
+}
+
+.calendar-container {
+    display: flex;
+    gap: 40px; 
+
+
+}
+
+.input-fields {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: #496fa0;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 290px;
+    transform: scale(1.5,1.5);
+   top: 150px;
+   right: 300px;
+    
+    
+}
+
+.input-fields label {
+    font-weight: 600;
+    color: #333;
+}
+
+.input-fields input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #dddddd59;
+    font-size: 1rem;
+}
+
+/* ---------- Log workout ---------- */
+#workout-btn{
+    position: relative;
+    background-color: #496ea097;
+    color: white;
+    bottom: 150px;
+    left: 300px;
+    width: 355px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+}
+
+#overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#popupDialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 90vw;
+    height: 90vh;
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+}
+
+#popupDialog.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+    background-color: transparent;
+}
+
+.weight-input-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.weight-input-container input[type="number"] {
+    flex: 1;
+}
+
+.weight-input-container select {
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #dddddd59;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s ease;
+    width: 60px;
+}
+
+.weight-input-container select:focus {
+    outline: none;
+    border-color: #496ea0;
+}
+
+.exercise-frequency-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.exercise-frequency-container select{
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #dddddd59;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.height-input-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.height-input-container input[type="number"] {
+    flex: 1;
+}
+
+.height-input-container select {
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #dddddd59;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: background-color 0.3s ease;
+    width: 60px;
+}
+
+.height-input-container select:focus {
+    outline: none;
+    border-color: #496ea0;
+}
+
+.gender-container label {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ---------- Workout Table implementation ---------- */
+.exercise-table {
+width: 80%;
+border-collapse: collapse;
+}
+.exercise-table th, .exercise-table td {
+padding: 10px;
+border: 0px solid #ddd;
+text-align: center;
+vertical-align: top;
+}
+.exercise-table th {
+background-color: #f2f2f2;
+}
+.input-group {
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+.input-field {
+width: 90%;
+padding: 5px;
+
+}
+.add-row-btn {
+margin: 10px 0;
+border-radius: 12%;
+padding: 10px 15px;
+font-size: 16px;
+cursor: pointer;
+background-color: black;
+color: white;
+
+}
+#exercise-table-header{
+    background-color: black;
+}
+
+.macro-field{
+    display: flex;
+    justify-content: center;
+}
+
+.macro-input-field{
+    width: 80px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 5px;
+}
+.macro-input-field::placeholder{
+    font-size: 15px;
+}
+
+/* for page customazition */
+.color-customization {
+    display: flex;
+    align-items: center; /* Vertically aligns items with the profile icon */
+    gap: 15px; /* Adds spacing between dropdowns and button */
+    position: absolute;
+    top: 50%; /* Vertically centers the buttons within the header */
+    right: 90px; /* Adjusts distance from the profile icon */
+    transform: translateY(-50%); /* Fixes vertical alignment */
+}
+
+.color-customization select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: inherit; /* Allow JavaScript to control text color */
+    cursor: pointer;
+    appearance: none; /* Remove default browser styles */
+}
+
+.color-customization select option {
+    color: #000000; /* Text inside options is black for visibility */
+}
+
+.color-customization button {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.color-customization button:hover {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+}
+
+/* Style the dropdown options */
+.color-customization select option {
+    background-color: #000000; /* Default background for options (black) */
+    color: #FFFFFF; /* Default text color for options (white) */
+}
+
+/* Ensure options reflect the selected dropdown background and text color */
+.color-customization select {
+    background-color: inherit; /* Matches the select's background */
+    color: inherit; /* Matches the select's text color */
+}
+
+/* Adjust hover behavior for better visibility */
+.color-customization select option:hover {
+    background-color: var(--secondary-color); /* Use secondary color for hover */
+    color: var(--main-color); /* Use main color for hover text */
+}
+
+
+
+
+
+
+#pull-btn{
+
+    position: relative;
+    background-color: #496ea097;
+    color: white;
+    bottom: 100px;
+    left: -60px;
+    width: 115px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
+}
+
+#legs-btn{
+    position: relative;
+    background-color: #496ea097;
+    color: white;
+    bottom: 100px;
+    left: -60px;
+    width: 115px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
+}
+
+
+#push-btn{
+
+    position: relative;
+    background-color: #496ea097;
+    color: white;
+    bottom: 100px;
+    left: -60px;
+    width: 115px;
+    cursor: pointer;
+    margin-top: 20% ;
+    border-radius: 10px;
+    height: 10%;
+    box-shadow: white;
+    padding: 5px;
+    text-shadow: 5px #12171e;
+}
+
+
+#savedWorkoutsContainer {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #496ea097;
+        color: black;
+        border: 1px solid #ddd;
+        text-shadow: 5px #12171e;
+
+        border-radius: 5px;
+        width: 250px; / Fixed width for consistency /
+        max-height: 500px; / Set a maximum height for scrolling /
+        overflow-y: auto; / Enable vertical scrolling /
+        overflow-x: hidden; / Disable horizontal scrolling /
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+
+#savedWorkoutsContainer h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center; /* Center align the heading */
+}
